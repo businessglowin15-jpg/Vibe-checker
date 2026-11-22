@@ -1,1 +1,1 @@
-# Vibe-checker
+# Vibe

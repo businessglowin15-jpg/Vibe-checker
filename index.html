@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>SSC Physics — Complete Chapter Notes + MCQ Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2A4A;
+  --navy-deep:#0A1E38;
+  --teal:#0EA5A0;
+  --teal-light:#E6F7F6;
+  --amber:#F0A93A;
+  --red:#E1523F;
+  --green:#1FA971;
+  --bg:#F4F6F9;
+  --card:#FFFFFF;
+  --ink:#122036;
+  --ink-soft:#5A6B82;
+  --line:#E3E8EF;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 2px 10px rgba(15,42,74,0.07);
+  --shadow-lg:0 10px 30px rgba(15,42,74,0.14);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Noto Sans Devanagari','Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overscroll-behavior-y:none;
+}
+h1,h2,h3,h4{font-family:'Poppins','Noto Sans Devanagari',sans-serif; margin:0; color:var(--navy);}
+p{line-height:1.7; margin:0 0 10px 0;}
+button{font-family:inherit; cursor:pointer;}
+a{text-decoration:none;color:inherit;}
+::selection{background:var(--teal); color:#fff;}
+
+/* ---------- Watermark ---------- */
+.wm-layer{
+  position:fixed; inset:0; pointer-events:none; z-index:9999;
+  overflow:hidden; opacity:0.06;
+}
+.wm-layer span{
+  position:absolute; white-space:nowrap; font-family:'Poppins',sans-serif;
+  font-weight:700; font-size:13px; color:#0F2A4A; transform:rotate(-28deg);
+  letter-spacing:1px;
+}
+
+/* ---------- App shell ---------- */
+#app{max-width:520px; margin:0 auto; min-height:100vh; background:var(--bg); position:relative; padding-bottom:20px;}
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(135deg,var(--navy) 0%, var(--navy-deep) 100%);
+  color:#fff; padding:14px 16px; display:flex; align-items:center; gap:10px;
+  box-shadow:var(--shadow);
+}
+.topbar .back-btn{
+  background:rgba(255,255,255,0.12); border:none; color:#fff; width:36px; height:36px; border-radius:10px;
+  font-size:18px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.topbar .title{font-size:16px; font-weight:700; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.topbar .sub{font-size:11px; opacity:0.75; font-weight:400;}
+
+.view{padding:16px;}
+.hidden{display:none !important;}
+
+/* ---------- Home ---------- */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%, #133a63 55%, var(--teal) 160%);
+  color:#fff; border-radius:var(--radius); padding:26px 20px; margin:16px; position:relative; overflow:hidden;
+}
+.hero::after{
+  content:"⚛"; position:absolute; right:-10px; bottom:-24px; font-size:130px; opacity:0.10; transform:rotate(12deg);
+}
+.hero h1{color:#fff; font-size:26px; font-weight:800; letter-spacing:0.3px;}
+.hero .tag{color:#CFE8FF; font-size:13.5px; margin-top:6px; font-weight:500;}
+.hero-stats{display:flex; gap:10px; margin-top:18px;}
+.hero-stat{background:rgba(255,255,255,0.12); border-radius:10px; padding:10px 12px; flex:1; text-align:center;}
+.hero-stat b{display:block; font-size:20px; font-family:'Poppins',sans-serif;}
+.hero-stat span{font-size:11px; opacity:0.85;}
+
+.section-label{
+  font-size:13px; font-weight:700; color:var(--navy); margin:22px 16px 10px;
+  display:flex; align-items:center; gap:8px;
+}
+.section-label .dot{width:8px; height:8px; border-radius:50%; background:var(--teal);}
+
+.full-test-card{
+  margin:0 16px; background:linear-gradient(120deg,#152A4A,#1F4E78); border-radius:var(--radius);
+  padding:18px; color:#fff; box-shadow:var(--shadow-lg); position:relative; overflow:hidden;
+}
+.full-test-card::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.08);}
+.full-test-card h3{color:#fff; font-size:17px;}
+.full-test-card p{color:#CFE1F5; font-size:12.5px; margin-top:4px;}
+.full-test-meta{display:flex; gap:14px; margin-top:12px; font-size:12px; color:#EAF2FF;}
+.full-test-meta span{display:flex; align-items:center; gap:5px;}
+.ft-btn{
+  margin-top:14px; width:100%; background:var(--amber); color:#3A2400; border:none; border-radius:10px;
+  padding:12px; font-weight:700; font-size:14px;
+}
+
+.chapters-grid{display:flex; flex-direction:column; gap:12px; padding:0 16px;}
+.chap-card{
+  background:var(--card); border-radius:var(--radius); padding:15px; box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+.chap-top{display:flex; gap:12px; align-items:flex-start;}
+.chap-num{
+  background:var(--teal-light); color:var(--teal); font-weight:800; font-family:'Poppins',sans-serif;
+  width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; font-size:15px;
+}
+.chap-info h4{font-size:15px; color:var(--navy); line-height:1.35;}
+.chap-info .desc{font-size:12px; color:var(--ink-soft); margin-top:3px; line-height:1.5;}
+.chap-meta{font-size:11px; color:var(--teal); font-weight:600; margin-top:6px;}
+.chap-actions{display:flex; gap:8px; margin-top:12px;}
+.btn{
+  flex:1; border:none; border-radius:9px; padding:10px 8px; font-size:12.5px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; gap:5px;
+}
+.btn-primary{background:var(--navy); color:#fff;}
+.btn-outline{background:var(--teal-light); color:var(--teal);}
+
+.footer-note{text-align:center; font-size:11px; color:var(--ink-soft); margin:26px 0 6px; opacity:0.7;}
+
+/* ---------- Chapter Study ---------- */
+.study-content{padding:0 16px 30px;}
+.study-hero{background:#fff; border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); margin-bottom:14px; border-left:5px solid var(--teal);}
+.study-hero h2{font-size:19px;}
+.study-hero .desc{font-size:12.5px; color:var(--ink-soft); margin-top:5px;}
+.study-body h3{
+  font-size:15px; color:var(--navy); margin:20px 0 8px; padding-bottom:6px; border-bottom:2px solid var(--teal-light);
+  display:flex; align-items:center; gap:8px;
+}
+.study-body h3::before{content:"§"; color:var(--teal); font-weight:800;}
+.study-body p{font-size:13.5px; color:#2B3B52;}
+.study-body ul{margin:6px 0 12px; padding-left:20px;}
+.study-body li{font-size:13.5px; margin-bottom:6px; color:#2B3B52; line-height:1.6;}
+.formula-box{
+  background:var(--teal-light); border:1px dashed var(--teal); border-radius:10px; padding:12px 14px;
+  margin:10px 0; font-family:'Poppins',sans-serif; font-weight:600; color:var(--navy); font-size:14px;
+}
+.note-box{
+  background:#FFF6E6; border-left:4px solid var(--amber); border-radius:8px; padding:10px 12px; margin:10px 0;
+  font-size:13px; color:#5A4210;
+}
+.imp-box{
+  background:#FDECEA; border-left:4px solid var(--red); border-radius:8px; padding:10px 12px; margin:10px 0;
+  font-size:13px; color:#7A241A;
+}
+.mini-table{width:100%; border-collapse:collapse; margin:10px 0; font-size:12.5px;}
+.mini-table th,.mini-table td{border:1px solid var(--line); padding:7px 8px; text-align:center;}
+.mini-table th{background:var(--navy); color:#fff; font-weight:600;}
+.mini-table tr:nth-child(even){background:#F7FAFC;}
+.study-cta{
+  display:flex; gap:10px; margin-top:20px; position:sticky; bottom:10px;
+}
+.study-cta button{flex:1; padding:13px; border-radius:11px; font-weight:700; font-size:13.5px; border:none; box-shadow:var(--shadow-lg);}
+
+/* ---------- Quiz intro ---------- */
+.intro-card{background:#fff; border-radius:var(--radius); padding:20px; margin:16px; box-shadow:var(--shadow-lg); text-align:center;}
+.intro-card h2{font-size:19px; margin-bottom:6px;}
+.intro-stats{display:flex; justify-content:center; gap:10px; margin:18px 0;}
+.intro-stat{background:var(--teal-light); border-radius:10px; padding:12px 14px; flex:1;}
+.intro-stat b{display:block; font-size:20px; color:var(--navy); font-family:'Poppins',sans-serif;}
+.intro-stat span{font-size:11px; color:var(--ink-soft);}
+.intro-rules{text-align:left; background:var(--bg); border-radius:10px; padding:12px 14px; font-size:12.5px; color:var(--ink-soft); margin-bottom:16px;}
+.intro-rules li{margin-bottom:6px;}
+.start-btn{width:100%; padding:14px; border:none; border-radius:12px; background:var(--teal); color:#fff; font-weight:800; font-size:15px;}
+
+/* ---------- Quiz engine ---------- */
+.quiz-header{
+  position:sticky; top:60px; z-index:40; background:#fff; padding:10px 16px; box-shadow:var(--shadow);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.q-progress{font-size:12.5px; font-weight:700; color:var(--navy);}
+.q-timer{
+  background:var(--navy); color:#fff; padding:6px 12px; border-radius:20px; font-weight:700; font-size:13px;
+  font-family:'Poppins',sans-serif; letter-spacing:0.5px;
+}
+.q-timer.low{background:var(--red); animation:pulse 1s infinite;}
+@keyframes pulse{0%{opacity:1;}50%{opacity:0.55;}100%{opacity:1;}}
+
+.quiz-body{padding:16px;}
+.q-card{background:#fff; border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);}
+.q-text{font-size:14.5px; font-weight:600; color:var(--ink); line-height:1.6; margin-bottom:14px;}
+.opt{
+  display:flex; align-items:flex-start; gap:10px; padding:12px 12px; border:1.5px solid var(--line);
+  border-radius:10px; margin-bottom:10px; font-size:13.5px; line-height:1.5; background:#fff;
+}
+.opt .opt-letter{
+  width:24px; height:24px; border-radius:50%; background:var(--bg); color:var(--ink-soft); font-weight:700;
+  display:flex; align-items:center; justify-content:center; font-size:12px; flex-shrink:0;
+}
+.opt.selected{border-color:var(--teal); background:var(--teal-light);}
+.opt.selected .opt-letter{background:var(--teal); color:#fff;}
+.opt.correct{border-color:var(--green); background:#EAFBF3;}
+.opt.correct .opt-letter{background:var(--green); color:#fff;}
+.opt.wrong{border-color:var(--red); background:#FDECEA;}
+.opt.wrong .opt-letter{background:var(--red); color:#fff;}
+
+.nav-row{display:flex; gap:10px; margin-top:16px;}
+.nav-row button{flex:1; padding:12px; border-radius:10px; border:none; font-weight:700; font-size:13px;}
+.nav-prev{background:var(--bg); color:var(--navy); border:1px solid var(--line) !important;}
+.nav-next{background:var(--navy); color:#fff;}
+.nav-submit{background:var(--red); color:#fff;}
+
+.palette-wrap{margin-top:16px; background:#fff; border-radius:var(--radius); padding:14px; box-shadow:var(--shadow);}
+.palette-title{font-size:12.5px; font-weight:700; color:var(--navy); margin-bottom:10px;}
+.palette-legend{display:flex; gap:12px; margin-bottom:10px; font-size:10.5px; color:var(--ink-soft); flex-wrap:wrap;}
+.palette-legend span{display:flex; align-items:center; gap:4px;}
+.leg-dot{width:9px; height:9px; border-radius:3px; display:inline-block;}
+.palette-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:8px;}
+.p-btn{
+  aspect-ratio:1; border-radius:8px; border:none; font-weight:700; font-size:12px; color:#fff;
+  background:#C7CFDA;
+}
+.p-btn.attempted{background:var(--green);}
+.p-btn.unattempted{background:#C7CFDA; color:var(--navy);}
+.p-btn.current{outline:3px solid var(--amber); outline-offset:1px;}
+
+/* ---------- Result ---------- */
+.result-hero{
+  background:linear-gradient(135deg,var(--navy),#1F4E78); color:#fff; border-radius:var(--radius);
+  padding:24px 20px; margin:16px; text-align:center; box-shadow:var(--shadow-lg);
+}
+.result-hero .pct{font-size:44px; font-weight:800; font-family:'Poppins',sans-serif;}
+.result-hero .pct-label{font-size:12.5px; opacity:0.85; margin-top:2px;}
+.result-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:16px;}
+.rstat{background:#fff; border-radius:12px; padding:13px 8px; text-align:center; box-shadow:var(--shadow);}
+.rstat b{display:block; font-size:19px; font-family:'Poppins',sans-serif;}
+.rstat span{font-size:10.5px; color:var(--ink-soft);}
+.rstat.correct b{color:var(--green);}
+.rstat.wrong b{color:var(--red);}
+.rstat.unattempted b{color:var(--ink-soft);}
+.chapter-perf{margin:16px; background:#fff; border-radius:var(--radius); padding:14px; box-shadow:var(--shadow);}
+.chapter-perf h4{font-size:13.5px; margin-bottom:10px;}
+.cp-row{display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:11.5px;}
+.cp-row .cp-name{width:38%; color:var(--ink-soft); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.cp-bar-wrap{flex:1; background:var(--bg); border-radius:6px; height:8px; overflow:hidden;}
+.cp-bar{height:100%; background:var(--teal); border-radius:6px;}
+.result-actions{display:flex; gap:10px; margin:16px;}
+.result-actions button{flex:1; padding:13px; border-radius:11px; border:none; font-weight:700; font-size:13px;}
+
+/* ---------- Review ---------- */
+.review-item{background:#fff; border-radius:var(--radius); padding:14px; margin-bottom:12px; box-shadow:var(--shadow);}
+.review-qtag{font-size:11px; font-weight:700; color:var(--ink-soft); margin-bottom:6px;}
+.review-exp{background:var(--teal-light); border-radius:8px; padding:10px 12px; margin-top:10px; font-size:12.5px; color:#0A4340; line-height:1.6;}
+.review-exp b{color:var(--navy);}
+.tag-pill{display:inline-block; padding:3px 9px; border-radius:20px; font-size:10.5px; font-weight:700; margin-left:6px;}
+.tag-correct{background:#EAFBF3; color:var(--green);}
+.tag-wrong{background:#FDECEA; color:var(--red);}
+.tag-skip{background:#F1F3F6; color:var(--ink-soft);}
+
+/* ---------- Confirm modal ---------- */
+.modal-overlay{position:fixed; inset:0; background:rgba(10,20,35,0.55); z-index:200; display:flex; align-items:flex-end; justify-content:center;}
+.modal-box{background:#fff; border-radius:16px 16px 0 0; padding:22px 18px; width:100%; max-width:520px;}
+.modal-box h3{font-size:16px; margin-bottom:8px;}
+.modal-box p{font-size:13px; color:var(--ink-soft);}
+.modal-actions{display:flex; gap:10px; margin-top:16px;}
+.modal-actions button{flex:1; padding:12px; border-radius:10px; border:none; font-weight:700; font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="wm-layer" id="wmLayer"></div>
+
+<div id="app">
+  <div class="topbar">
+    <button class="back-btn hidden" id="backBtn" onclick="goBack()">‹</button>
+    <div>
+      <div class="title" id="topTitle">SSC Physics</div>
+      <div class="sub" id="topSub">भौतिक विज्ञान अध्ययन केंद्र</div>
+    </div>
+  </div>
+
+  <!-- ===================== HOME VIEW ===================== -->
+  <div class="view" id="view-home">
+    <div class="hero">
+      <h1>SSC Physics</h1>
+      <div class="tag">संपूर्ण चैप्टर नोट्स + MCQ प्रैक्टिस (हिंदी में)</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>15</b><span>कुल चैप्टर</span></div>
+        <div class="hero-stat"><b id="totalMcqCount">--</b><span>कुल MCQ</span></div>
+        <div class="hero-stat"><b>50</b><span>फुल टेस्ट Q</span></div>
+      </div>
+    </div>
+
+    <div class="section-label"><span class="dot"></span>फुल फिजिक्स टेस्ट</div>
+    <div class="full-test-card">
+      <h3>Full Physics Test</h3>
+      <p>सभी 15 चैप्टर्स से संतुलित रूप में चुने गए प्रश्न — असली परीक्षा जैसा अनुभव</p>
+      <div class="full-test-meta">
+        <span>📝 50 प्रश्न</span>
+        <span>⏱ 12 मिनट</span>
+        <span>📚 पूर्ण सिलेबस</span>
+      </div>
+      <button class="ft-btn" onclick="openFullTestIntro()">Start Full Test शुरू करें</button>
+    </div>
+
+    <div class="section-label"><span class="dot"></span>चैप्टर वाइज़ अध्ययन</div>
+    <div class="chapters-grid" id="chaptersGrid"></div>
+
+    <div class="footer-note">made by Ashwin</div>
+  </div>
+
+  <!-- ===================== CHAPTER STUDY VIEW ===================== -->
+  <div class="view hidden" id="view-study">
+    <div class="study-content" id="studyContent"></div>
+  </div>
+
+  <!-- ===================== QUIZ INTRO VIEW ===================== -->
+  <div class="view hidden" id="view-quizintro">
+    <div class="intro-card" id="introCard"></div>
+  </div>
+
+  <!-- ===================== QUIZ VIEW ===================== -->
+  <div class="view hidden" id="view-quiz">
+    <div class="quiz-header">
+      <div class="q-progress" id="qProgress">Question 1 / 10</div>
+      <div class="q-timer" id="qTimer">02:00</div>
+    </div>
+    <div class="quiz-body">
+      <div class="q-card" id="qCard"></div>
+      <div class="nav-row">
+        <button class="nav-prev" onclick="prevQuestion()">← पिछला</button>
+        <button class="nav-next" id="nextBtn" onclick="nextQuestion()">अगला →</button>
+      </div>
+      <button class="nav-submit" style="width:100%;margin-top:10px;padding:13px;border-radius:10px;" onclick="confirmSubmit()">Submit Test जमा करें</button>
+      <div class="palette-wrap">
+        <div class="palette-title">प्रश्न पैलेट</div>
+        <div class="palette-legend">
+          <span><i class="leg-dot" style="background:var(--green)"></i>हल किया</span>
+          <span><i class="leg-dot" style="background:#C7CFDA"></i>बाकी</span>
+          <span><i class="leg-dot" style="background:#fff;outline:2px solid var(--amber)"></i>वर्तमान</span>
+        </div>
+        <div class="palette-grid" id="paletteGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== RESULT VIEW ===================== -->
+  <div class="view hidden" id="view-result">
+    <div id="resultContent"></div>
+  </div>
+
+  <!-- ===================== REVIEW VIEW ===================== -->
+  <div class="view hidden" id="view-review">
+    <div class="view" id="reviewContent" style="padding:16px;"></div>
+  </div>
+</div>
+
+<div id="modalRoot"></div>
+
+<script>
+/* =========================================================================
+   SSC PHYSICS APP — content sourced entirely from the attached SSC Physics
+   Hindi handwritten notes PDF (Rakesh Yadav Readers Publication).
+   ========================================================================= */
+
+/* ---------------- Watermark generator ---------------- */
+(function(){
+  const layer = document.getElementById('wmLayer');
+  const rows = 14, cols = 3;
+  for(let r=0;r<rows;r++){
+    for(let c=0;c<cols;c++){
+      const s = document.createElement('span');
+      s.textContent = 'made by Ashwin';
+      s.style.top = (r*90-40)+'px';
+      s.style.left = (c*220-60)+'px';
+      layer.appendChild(s);
+    }
+  }
+})();
+
+/* ================== CHAPTER DATA ================== */
+const chapters = [
+
+/* ---------------- CHAPTER 1: तरंगें (Waves + विद्युत चुम्बकीय तरंगें) ---------------- */
+{
+  id:1,
+  title:"तरंगें (Waves)",
+  desc:"यांत्रिक व अयांत्रिक तरंगें, ध्वनि, विद्युत चुम्बकीय स्पेक्ट्रम",
+  content:`
+  <h3>परिचय</h3>
+  <p>किसी माध्यम में होने वाले विक्षोभ/हलचल को <b>तरंग</b> कहा जाता है। तरंगें दो प्रकार की होती हैं।</p>
+
+  <h3>तरंगों के प्रकार</h3>
+  <ul>
+    <li><b>अयांत्रिक तरंग (Non-Mechanical):</b> वे तरंगें जिन्हें चलने के लिए किसी माध्यम की आवश्यकता नहीं होती अर्थात् ये निर्वात में भी चल सकती हैं। उदाहरण — प्रकाश तरंगें।</li>
+    <li><b>यांत्रिक तरंग (Mechanical):</b> इन तरंगों को चलने के लिए एक माध्यम की आवश्यकता होती है अर्थात् ये निर्वात में नहीं चल सकतीं। ये दो प्रकार की होती हैं:
+      <ul>
+        <li><b>अनुप्रस्थ तरंग:</b> माध्यम के कणों के तरंग की दिशा के लंबवत कंपन करने से उत्पन्न होती है। उदाहरण — रस्सी में उत्पन्न तरंगें, पानी की सतह पर उत्पन्न तरंगें।</li>
+        <li><b>अनुदैर्ध्य तरंग:</b> माध्यम के कणों के तरंग की दिशा के समांतर कंपन करने से उत्पन्न होती है। उदाहरण — ध्वनि तरंगें।</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>ध्वनि (Sound)</h3>
+  <ul>
+    <li>वस्तुओं के कंपन करने से ध्वनि उत्पन्न होती है।</li>
+    <li>ध्वनि एक यांत्रिक अनुदैर्ध्य तरंग है।</li>
+    <li>ध्वनि ठोस, तरल और गैस सभी माध्यमों में चल सकती है, किन्तु निर्वात में नहीं।</li>
+  </ul>
+  <div class="mini-table">
+    <tr><th>माध्यम</th><th>ध्वनि की चाल</th></tr>
+    <tr><td>ठोस (स्टील)</td><td>5550 m/s</td></tr>
+    <tr><td>तरल (जल)</td><td>1500 m/s</td></tr>
+    <tr><td>गैस (हवा, 22°C)</td><td>343 m/s</td></tr>
+  </div>
+  <div class="mini-table">
+    <tr><th>माध्यम</th><th>प्रकाश की चाल</th></tr>
+    <tr><td>निर्वात</td><td>3×10⁸ m/s (सर्वाधिक)</td></tr>
+    <tr><td>हवा</td><td>निर्वात से कम</td></tr>
+    <tr><td>तरल</td><td>हवा से कम</td></tr>
+    <tr><td>ठोस</td><td>सबसे कम</td></tr>
+  </div>
+  <div class="note-box">प्रकाश की चाल ध्वनि की चाल से ज्यादा होती है, इसीलिए आसमान में बादलों के गरजने की घटना के दौरान बिजली की चमक पहले दिखाई पड़ती है तथा बादलों की गड़गड़ाहट बाद में सुनाई देती है।</div>
+
+  <h3>अनुप्रस्थ तरंग के अवयव</h3>
+  <ul>
+    <li><b>तरंगदैर्ध्य (λ):</b> दो क्रमागत श्रृंगों या गर्तों के बीच की दूरी। SI मात्रक — मीटर।</li>
+    <li><b>आवृत्ति (f या ν):</b> इकाई समय में माध्यम के कणों द्वारा किए गए कंपनों की संख्या। SI मात्रक — हर्ट्ज। 1 हर्ट्ज = 1/सेकंड।</li>
+    <li><b>तरंग की चाल:</b> v = fλ</li>
+    <li><b>आयाम (Amplitude):</b> माध्यम के कणों का उनकी माध्य अवस्था से अधिकतम विस्थापन तरंग का आयाम कहलाता है।</li>
+    <li><b>ध्वनि की प्रबलता (L):</b> कंपन कर रही वस्तु के आयाम पर निर्भर करती है; L ∝ a²। मात्रक — डेसिबल (dB); 1 बेल = 10 dB। सामान्य बातचीत के दौरान ध्वनि प्रबलता की सीमा लगभग 50 dB होती है।</li>
+  </ul>
+
+  <h3>सुनने योग्य आवृत्ति की परास</h3>
+  <div class="mini-table">
+    <tr><th>श्रेणी</th><th>आवृत्ति परास</th></tr>
+    <tr><td>अपश्रव्य तरंग (Infrasonic)</td><td>20 Hz से कम</td></tr>
+    <tr><td>श्रव्य तरंग (Audible)</td><td>20 Hz – 20,000 Hz</td></tr>
+    <tr><td>पराश्रव्य तरंग (Ultrasonic)</td><td>20,000 Hz से अधिक</td></tr>
+  </div>
+  <p><b>पराश्रव्य तरंगों के उदाहरण:</b> चमगादड़ का अंधेरों में उड़ना, डॉल्फिन का शिकार पकड़ना, सोनोग्राफी, इलेक्ट्रॉनिक उपकरणों की सफाई, सोनार (SONAR — Sound Navigation And Ranging)।</p>
+  <p><b>अपश्रव्य तरंगों के उदाहरण:</b> हाथी, गैंडा (Rhino), Whales।</p>
+  <div class="note-box">निम्न आवृत्ति → निम्न तारत्व (Pitch) → मोटी आवाज (Boys)। उच्च आवृत्ति → उच्च तारत्व → बारीक आवाज (Girls)।</div>
+
+  <h3>प्रतिध्वनि (ECHO)</h3>
+  <ul>
+    <li>प्रतिध्वनि सुनने के लिए परावर्तक से न्यूनतम दूरी 17.15 m होनी चाहिए।</li>
+    <li>किसी बोले गए शब्द का हमारे कान के पर्दे पर प्रभाव 0.1 सेकंड तक रहता है, अतः प्रतिध्वनि सुनने के लिए दो शब्दों के बीच 0.1 सेकंड का अंतराल होना आवश्यक है।</li>
+  </ul>
+  <div class="formula-box">d = v × t, जहाँ d = 2×(स्रोत से दीवार की दूरी)</div>
+  <p><b>गूंज (Reverberation):</b> सिनेमा हॉल की दीवारें लकड़ी की बनाई जाती हैं ताकि वे गूंज को अपने अंदर अवशोषित कर सकें।</p>
+  <p><b>ध्वनि का डॉप्लर प्रभाव:</b> यह नियम सन् 1842 में दिया गया था। स्रोत और श्रोता के बीच सापेक्ष गति होने पर सुनी गई आवृत्ति बदल जाती है।</p>
+
+  <h3>अन्य महत्वपूर्ण तथ्य</h3>
+  <ul>
+    <li>ध्वनि की चाल पर दाब और आवृत्ति का कोई प्रभाव नहीं होता।</li>
+    <li>ध्वनि की चाल तापमान और आर्द्रता के बढ़ने से बढ़ती है।</li>
+    <li>ध्वनि की चाल घनत्व के बढ़ने से घटती है।</li>
+    <li>1 मैक = ध्वनि की चाल; सुपरसोनिक → 1.2–5 मैक; सबसोनिक → 0.8 मैक से कम।</li>
+    <li><b>प्रत्यास्थता (Elasticity):</b> किसी पदार्थ का वह गुण, जिससे बाह्य बल को हटाने पर वस्तु अपने पुराने आकार में आ जाए।</li>
+  </ul>
+
+  <h3>विद्युत चुम्बकीय तरंगें (EM Waves)</h3>
+  <ul>
+    <li>विद्युत चुम्बकीय तरंगें अयांत्रिक तरंगें होती हैं — ये निर्वात में भी चल सकती हैं।</li>
+    <li>सभी विद्युत चुम्बकीय तरंगें निर्वात में 3×10⁸ m/s की चाल से चलती हैं।</li>
+    <li>सभी विद्युत चुम्बकीय तरंगों की प्रकृति केवल अनुप्रस्थ होती है।</li>
+  </ul>
+  <p><b>विद्युत चुम्बकीय तरंगें सात प्रकार की होती हैं (बढ़ती आवृत्ति / घटती तरंगदैर्ध्य के क्रम में):</b></p>
+  <div class="mini-table">
+    <tr><th>तरंग</th><th>खोजकर्ता</th><th>उपयोग</th></tr>
+    <tr><td>रेडियो तरंग</td><td>Hertz, Marconi</td><td>FM, TV(DTH), उपग्रह, RADAR</td></tr>
+    <tr><td>सूक्ष्म तरंग (Micro)</td><td>J.C. Bose, Marconi</td><td>माइक्रोवेव ओवन, मोबाइल, Bluetooth, WiFi</td></tr>
+    <tr><td>अवरक्त (Infrared)</td><td>William Herschel</td><td>Remote, Thermal Imaging, Fog Camera</td></tr>
+    <tr><td>दृश्य प्रकाश</td><td>न्यूटन (7 रंगों का समूह)</td><td>देखना, Li-Fi, LASER</td></tr>
+    <tr><td>पराबैंगनी (UV)</td><td>John Ritter</td><td>त्वचा रोग, Sun Tanning, Vit-D निर्माण, जल शुद्धिकरण</td></tr>
+    <tr><td>X-किरणें</td><td>W. C. Roentgen (नोबल 1901)</td><td>Radiography (हड्डी इमेजिंग), रत्न परीक्षण</td></tr>
+    <tr><td>γ-किरणें</td><td>Paul Villard, Henry Becquerel</td><td>रेडियोथेरेपी (कैंसर उपचार)</td></tr>
+  </div>
+  <div class="note-box">श्वेत प्रकाश का प्रिज्म से गुजरने के बाद सात रंगों में बंटने की घटना को <b>प्रकाश का वर्ण विक्षेपण</b> कहते हैं — लाल (कम विचलन, अधिक λ) से बैंगनी (अधिक विचलन, कम λ) तक। सूर्य की बाहरी सतह का तापमान 6000 K है; उच्च तापमान मापने के लिए पाइरोमीटर का उपयोग होता है।</div>
+  <p>ओजोन परत दिवस — 16 सितंबर; Dobson ओजोन परत की मोटाई मापने की इकाई है; पराबैंगनी किरणें ओजोन परत द्वारा अवशोषित हो जाती हैं। γ-किरणों का उत्सर्जन कोबाल्ट-60 नामक पदार्थ से किया जाता है।</p>
+  `,
+  mcqs:[
+    {q:"0.3 मीटर तरंगदैर्ध्य की तरंग हवा में उत्पन्न होती है और 300 मीटर/सेकंड की चाल से यात्रा करती है, तो यह है:",options:["श्रव्य तरंग (Audible)","पराश्रव्य तरंग","सूक्ष्म तरंग","अपश्रव्य तरंग"],correct:0,exp:"v=fλ से f = 300/0.3 = 1000 Hz, जो 20 Hz–20,000 Hz की श्रव्य परास में आता है।"},
+    {q:"निम्न में से कौन सी आवृत्ति मानव कान के लिए श्रव्य है?",options:["10 Hz","15,000 Hz","30,000 Hz","30,000 Hz से ज्यादा"],correct:1,exp:"मानव कान 20 Hz से 20,000 Hz तक की आवृत्ति सुन सकता है, इसलिए 15,000 Hz श्रव्य है।"},
+    {q:"अनुप्रस्थ तरंग में एक श्रृंग और लगातार गर्त के बीच की दूरी है:",options:["तरंगदैर्ध्य","आयाम (Amplitude)","तरंगदैर्ध्य का आधा","तरंगदैर्ध्य का दो गुना"],correct:2,exp:"श्रृंग और आसन्न गर्त के बीच की दूरी λ/2 होती है, जबकि दो क्रमागत श्रृंगों के बीच पूरी λ होती है।"},
+    {q:"ध्वनि से होकर नहीं गुजर सकती है:",options:["पानी","इस्पात (Steel)","हवा","निर्वात"],correct:3,exp:"ध्वनि एक यांत्रिक तरंग है, इसे चलने के लिए माध्यम चाहिए — यह निर्वात से नहीं गुजर सकती।"},
+    {q:"ध्वनि तरंगों का वह गुण, जिससे ध्वनि का तारत्व (Pitch) निर्धारित होता है, वह है:",options:["आवृत्ति","आयाम","तरंगदैर्ध्य","तीव्रता"],correct:0,exp:"आवृत्ति ही ध्वनि के तारत्व (pitch) को निर्धारित करती है — उच्च आवृत्ति = उच्च तारत्व।"},
+    {q:"ध्वनि तरंग किस प्रकार की होती है?",options:["विद्युत चुम्बकीय","अनुप्रस्थ","यांत्रिक अनुदैर्ध्य","इनमें से कोई नहीं"],correct:2,exp:"ध्वनि एक यांत्रिक अनुदैर्ध्य तरंग है जिसमें माध्यम के कण तरंग की दिशा के समांतर कंपन करते हैं।"},
+    {q:"अलग प्रतिध्वनि सुनने के लिए मूल ध्वनि और परावर्तित ध्वनि के बीच न्यूनतम समय अंतराल होना चाहिए:",options:["1 सेकंड","0.1 सेकंड","0.02 सेकंड","2 सेकंड"],correct:1,exp:"कान के पर्दे पर ध्वनि का प्रभाव 0.1 सेकंड तक रहता है, इसलिए प्रतिध्वनि सुनने हेतु न्यूनतम 0.1 सेकंड का अंतराल आवश्यक है।"},
+    {q:"एक व्यक्ति मजबूत कंक्रीट दीवार के पास खड़ी धातु की थाली बजाता है और 0.3 सेकंड बाद प्रतिध्वनि सुनता है। यदि ध्वनि 340 मी./सै. की चाल से चलती है, तो दीवार उससे कितनी दूर है?",options:["102 m","11 m","51 m","30 m"],correct:2,exp:"d = v×t = 340×0.3 = 102 m; यह कुल तय दूरी है (जाना+आना), अतः दीवार की दूरी = 102/2 = 51 m।"},
+    {q:"निम्नलिखित में से कौन प्रकृति में विद्युत चुम्बकीय नहीं है?",options:["कैथोड किरणें","X-किरणें","गामा किरणें","इन्फ्रारेड किरणें"],correct:0,exp:"कैथोड किरणें वास्तव में इलेक्ट्रॉनों की धारा हैं (कणों से बनी), ये विद्युत चुम्बकीय तरंग नहीं हैं।"},
+    {q:"स्पेक्ट्रम के निम्नलिखित भागों — (1) दृश्य किरण (2) अवरक्त किरण (3) पराबैंगनी किरण (4) सूक्ष्म तरंग — का वह क्रम कौन सा सही है जिसमें उनकी तरंगदैर्ध्य बढ़ती है?",options:["4-3-1-2","4-1-2-3","3-2-1-4","3-1-2-4"],correct:3,exp:"बढ़ती तरंगदैर्ध्य का सही क्रम: पराबैंगनी(3) < दृश्य(1) < अवरक्त(2) < सूक्ष्म तरंग(4), अर्थात् 3-1-2-4।"}
+  ]
+},
+
+/* ---------------- CHAPTER 2: प्रकाशिकी (Optics) ---------------- */
+{
+  id:2,
+  title:"प्रकाशिकी (Optics)",
+  desc:"परावर्तन, अपवर्तन, दर्पण, लेंस, दृष्टि दोष",
+  content:`
+  <h3>प्रदीप्त व अप्रदीप्त वस्तुएँ</h3>
+  <ul>
+    <li><b>प्रदीप्त वस्तुएँ (Luminous):</b> जिनके पास स्वयं का प्रकाश होता है — सूर्य, तारे, बल्ब, ट्यूबलाइट।</li>
+    <li><b>अप्रदीप्त वस्तुएँ (Non-Luminous):</b> जो प्रदीप्त वस्तु से आने वाले प्रकाश को परावर्तित करती हैं — टेबल, कुर्सी, कपड़े, दीवार, चाँद, ग्रह।</li>
+  </ul>
+
+  <h3>प्रकाश का परावर्तन (Reflection)</h3>
+  <p>i = आपतन कोण, r = परावर्तन कोण, g = ग्रेजिंग कोण; ∠i + ∠g = 90°</p>
+  <div class="formula-box">परावर्तन के नियम: ∠i = ∠r; आपतित किरण, अभिलंब और परावर्तित किरण तीनों एक ही तल में होते हैं। यह नियम सभी दर्पणों (समतल/उत्तल/अवतल) के लिए वैध है।</div>
+  <p><b>नियमित परावर्तन (Specular):</b> चिकनी सतह से — समांतर किरणें समांतर रहती हैं। <b>अनियमित परावर्तन (Diffused):</b> खुरदरी सतह से — किरणें बिखर जाती हैं।</p>
+
+  <h3>समतल दर्पण (Plane Mirror)</h3>
+  <ul>
+    <li>न तो अभिसारी (converging) है और न ही अपसारी (diverging)।</li>
+    <li>फोकस दूरी अनंत, वक्रता त्रिज्या अनंत, शक्ति शून्य।</li>
+    <li>आवर्धन क्षमता +1 होती है; प्रतिबिंब की ऊँचाई = वस्तु की ऊँचाई (h₀ = hᵢ)।</li>
+    <li>पूर्ण प्रतिबिंब देखने के लिए दर्पण की न्यूनतम लंबाई वस्तु की लंबाई की आधी होनी चाहिए।</li>
+  </ul>
+  <div class="formula-box">दो दर्पणों के बीच प्रतिबिंबों की संख्या: N = (360/θ) − 1
+  θ=90° ⇒ N=3;  θ=60° ⇒ N=5;  θ=30° ⇒ N=11;  θ=0° (समांतर दर्पण) ⇒ N=∞</div>
+  <p><b>समतल दर्पण के उपयोग:</b> Dressing Table, Kaleidoscope (बहुरूपदर्शक — परावर्तन सिद्धांत), Periscope (पेरिस्कोप — परावर्तन सिद्धांत पर कार्य करता है)।</p>
+  <div class="note-box">कोई वस्तु हमें काली तब दिखाई देती है जब वह सभी रंगों को अवशोषित कर ले। कोई वस्तु सफेद तब दिखाई देती है जब वह सभी रंगों को परावर्तित कर दे। हरी घास का रंग हरा दिखाई देता है क्योंकि वह हरे रंग के प्रकाश को हमारी आँखों पर परावर्तित करती है (शेष सभी रंग अवशोषित कर लेती है)। लाल रंग का गुलाब हरे रंग के प्रकाश में काला दिखाई देता है।</div>
+
+  <h3>प्रकाश का अपवर्तन (Refraction)</h3>
+  <p>जब प्रकाश एक पारदर्शी माध्यम से दूसरे पारदर्शी माध्यम में जाता है तो इस घटना को प्रकाश का अपवर्तन कहा जाता है।</p>
+  <div class="mini-table">
+    <tr><th>माध्यम</th><th>निरपेक्ष अपवर्तनांक (n)</th></tr>
+    <tr><td>निर्वात</td><td>1</td></tr>
+    <tr><td>वायु</td><td>1.0003</td></tr>
+    <tr><td>जल</td><td>1.33</td></tr>
+    <tr><td>बर्फ</td><td>1.31</td></tr>
+    <tr><td>केरोसीन</td><td>1.44</td></tr>
+    <tr><td>काँच</td><td>1.5</td></tr>
+    <tr><td>हीरा (Diamond)</td><td>2.42 (सर्वाधिक)</td></tr>
+  </div>
+  <div class="formula-box">n = c/v; c = निर्वात में प्रकाश की चाल, v = माध्यम में प्रकाश की चाल; अपवर्तनांक एक मात्रकहीन राशि है।</div>
+  <p>प्रकाश की चाल निर्वात में सबसे अधिक तथा ठोस में सबसे कम होती है (Vacuum > Air > Liquid > Solid)। प्रकाश की चाल सर्वप्रथम Ole Romer ने 1676 में नापी थी। जिस माध्यम का अपवर्तनांक सबसे कम हो, उसमें प्रकाश की चाल सबसे अधिक होती है — दिए गए विकल्पों (काँच, जल, केरोसीन, हीरा) में जल का अपवर्तनांक सबसे कम है, अतः जल में प्रकाश की चाल सबसे अधिक है।</p>
+  <div class="formula-box">स्नैल का नियम: sin i / sin r = n₂/n₁ = v₁/v₂ ⇒ v₂ sin i = v₁ sin r</div>
+  <p><b>अपवर्तन के प्रभाव:</b> तारों का टिमटिमाना, पानी से भरी बाल्टी का कम गहरा दिखाई देना, पानी के अंदर की वस्तु का उठा हुआ दिखना, सूर्य का उदय से पहले तथा अस्त होने के बाद भी दिखाई देना।</p>
+
+  <h3>पूर्ण आंतरिक परावर्तन (TIR)</h3>
+  <ul>
+    <li>यह घटना केवल तभी संभव है जब प्रकाश सघन से विरल माध्यम में जाता है।</li>
+    <li>जब अपवर्तन कोण 90° होता है, तब आपतन कोण को क्रांतिक कोण (critical angle, iₒ) कहते हैं।</li>
+    <li>जब आपतन कोण क्रांतिक कोण से अधिक हो, तब TIR की घटना होती है।</li>
+  </ul>
+  <p><b>TIR के उदाहरण:</b> हीरों का चमकना, मृग मरीचिका (Mirage) का बनना [TIR+अपवर्तन], प्रकाशिक तंतु (Optical Fibre — जनक: Narendra Kapani), एंडोस्कोपी।</p>
+
+  <h3>प्रकाश का प्रकीर्णन (Scattering)</h3>
+  <div class="formula-box">रैले प्रकीर्णन: S ∝ 1/λ⁴  ⇒ λ↑ तो S↓ (लाल रंग), λ↓ तो S↑ (नीला रंग)</div>
+  <p>Rayleigh scattering तभी वैध है जब कणों का आकार तरंगदैर्ध्य से बहुत छोटा हो। Mie scattering — जब कणों का आकार तरंगदैर्ध्य से बड़ा हो, तब सभी रंगों का प्रकीर्णन समान रूप से होता है (जैसे बादल, कोहरा, धुआँ सफेद दिखते हैं)।</p>
+  <p><b>प्रकीर्णन के प्रभाव:</b> आकाश का नीला रंग, समुद्र का नीला रंग, सूर्योदय/सूर्यास्त पर सूर्य का लाल रंग (Rayleigh); बादल, कोहरे और धुएँ का सफेद रंग (Mie)। खतरे के निशान लाल रंग के बनाए जाते हैं क्योंकि उच्च तरंगदैर्ध्य के कारण लाल रंग का प्रकीर्णन सबसे कम होता है। किसी अंतरिक्ष यात्री के लिए आकाश का रंग काला होता है।</p>
+
+  <h3>इंद्रधनुष, व्यतिकरण, विवर्तन</h3>
+  <p><b>इंद्रधनुष बनने के लिए आवश्यक:</b> वर्ण विक्षेपण, परावर्तन/पूर्ण आंतरिक परावर्तन, अपवर्तन। दोपहर 12 बजे इंद्रधनुष नहीं बन सकता क्योंकि तब सूर्य सिर के ठीक ऊपर (90°) होता है।</p>
+  <p><b>व्यतिकरण (Interference):</b> तेल की बूंदों में रंगों का दिखाई देना, मोर के पंखों में रंगों का चमकना, साबुन के पानी के बुलबुलों में रंगों का दिखाई देना।</p>
+  <p><b>विवर्तन (Diffraction):</b> CD/DVD में रंगों का चमकना, होलोग्राम में रंगों का दिखाई देना — प्रकाश का किसी छिद्र से गुजरते समय या अवरोध के किनारों के चारों तरफ मुड़ जाना (छिद्र का आकार तरंगदैर्ध्य की कोटि का होना चाहिए)।</p>
+  <p><b>प्रकाश की ऋजुरेखीय संचरण:</b> परछाई (shadow) का बनना, ग्रहण का लगना (eclipse)।</p>
+  <div class="note-box">आइंस्टीन — नोबेल पुरस्कार (1921) प्रकाश वैद्युत प्रभाव सिद्धांत के लिए; सापेक्षता का विशिष्ट सिद्धांत (STR) — 1905; सामान्य सिद्धांत (GTR) — 1915। सी.वी. रमन — नोबेल पुरस्कार विजेता (1930) — रमन प्रभाव सिद्धांत। प्रकाश की प्रकृति द्वैती (Dual) है — तरंग (व्यतिकरण, विवर्तन, ध्रुवीकरण) व कण (प्रकाश वैद्युत प्रभाव, फोटॉन)।</div>
+
+  <h3>लेंस एवं दर्पण</h3>
+  <p>दर्पण दो प्रकार — समतल (न अभिसारी न अपसारी) और गोलाकार (अवतल = अभिसारी, उत्तल = अपसारी)। गोलाकार दर्पणों के लिए f = R/2, R = 2f।</p>
+  <p><b>अवतल दर्पण के उपयोग:</b> शेविंग दर्पण, दंत चिकित्सा, सौर भट्टियाँ, ENT डॉक्टर (Head Mirror), कार की हेडलाइट, सर्च लाइट, Dish Antenna।</p>
+  <p><b>उत्तल दर्पण के उपयोग:</b> वाहनों के साइड मिरर (Rear View Mirror), मेट्रो प्लेटफार्म, ATM मशीन, स्ट्रीट लैंप, सड़कों के तीव्र मोड़ पर — इसके द्वारा बने सभी प्रतिबिंब सीधे, आभासी और छोटे होते हैं।</p>
+  <div class="formula-box">दर्पण सूत्र: 1/f = 1/v + 1/u (u = वस्तु दूरी, v = प्रतिबिंब दूरी, f = फोकस दूरी)</div>
+  <div class="formula-box">लेंस सूत्र: 1/f = 1/v − 1/u;  लेंस की शक्ति P = 1/f(मीटर) = 100/f(सेमी); SI मात्रक — डायोप्टर (1D = 1/मीटर)</div>
+  <p>दर्पण परावर्तन के नियमों पर कार्य करते हैं जबकि लेंस अपवर्तन के नियमों पर कार्य करते हैं। लेंस बनाने के लिए फ्लिंट (Flint) काँच का उपयोग किया जाता है। पानी के अंदर वायु के बुलबुले अवतल लेंस की भाँति व्यवहार करते हैं।</p>
+  <p><b>उत्तल लेंस के उपयोग:</b> कैमरा, प्रोजेक्टर, सूक्ष्मदर्शी, दूरदर्शी, आवर्धक काँच (magnifying glass), जासूस (detectives), घड़ीसाज (clock-maker), हस्तरेखा पढ़ने में।</p>
+
+  <h3>दृष्टि दोष (Eye Defects)</h3>
+  <div class="mini-table">
+    <tr><th>दोष</th><th>समस्या</th><th>सुधार</th></tr>
+    <tr><td>निकट दृष्टि दोष (Myopia)</td><td>दूर की वस्तुएँ साफ नहीं दिखतीं (प्रतिबिंब रेटिना के आगे बनता है)</td><td>अवतल लेंस</td></tr>
+    <tr><td>दूर दृष्टि दोष (Hypermetropia)</td><td>पास की वस्तुएँ साफ नहीं दिखतीं (प्रतिबिंब रेटिना के पीछे बनता है)</td><td>उत्तल लेंस</td></tr>
+    <tr><td>जरा दृष्टि दोष (Presbyopia)</td><td>दूर व पास दोनों साफ नहीं दिखतीं (सिलियरी मांसपेशी कमजोर)</td><td>द्विफोकसी (Bifocal) लेंस</td></tr>
+    <tr><td>अबिंदुकता (Astigmatism)</td><td>प्रतिबिंब एक बिंदु पर नहीं बनते (कॉर्निया का टेढ़ा होना)</td><td>बेलनाकार (Torric) लेंस</td></tr>
+  </div>
+  <p>मनुष्य की आँख के जिस भाग पर प्रतिबिंब बनता है वह — Retina (रेटिना)। जिस भाग को दान किया जाता है वह — Cornea (कॉर्निया)। स्वस्थ आँख के लिए स्पष्ट दृष्टि की न्यूनतम दूरी 25 cm है। दृष्टि की निर्बंध्यता = 1/16 सेकंड।</p>
+  `,
+  mcqs:[
+    {q:"परावर्तन के नियम ∠i = ∠r के लिए मान्य हैं:",options:["केवल समतल दर्पण","केवल उत्तल दर्पण","केवल अवतल दर्पण","सभी दर्पण"],correct:3,exp:"परावर्तन के नियम सभी प्रकार के दर्पणों (समतल, उत्तल, अवतल) के लिए समान रूप से लागू होते हैं।"},
+    {q:"उन्निलंब (Normal) और आपतित किरण के बीच के कोण को आपतन कोण कहा जाता है — यह किसके बीच मापा जाता है?",options:["सतह","उन्निलम्ब (अभिलंब)","स्पर्श रेखा","परावर्तित किरण"],correct:1,exp:"आपतन कोण हमेशा अभिलंब (normal) और आपतित किरण के बीच मापा जाता है, सतह से नहीं।"},
+    {q:"प्रकाश की एक किरण एक समतल दर्पण पर आपतित होती है जो दर्पण की सतह से 90° का कोण बनाती है, तो प्रकाश की उस किरण के लिए परावर्तन कोण होगा:",options:["45°","90°","0°","60°"],correct:2,exp:"यदि ग्रेजिंग कोण g=90° है तो आपतन कोण i=0° (चूँकि i+g=90°), अतः r भी 0° होगा।"},
+    {q:"पेरिस्कोप बनाने के लिए निम्न में से किसका उपयोग किया जाता है?",options:["अवतल लेंस","अवतल दर्पण","समतल दर्पण","कोई नहीं"],correct:2,exp:"पेरिस्कोप में 45° के कोण पर लगे दो समतल दर्पणों का उपयोग किया जाता है।"},
+    {q:"एक पेरिस्कोप किस सिद्धांत पर कार्य करता है?",options:["अपवर्तन","पूर्ण आंतरिक परावर्तन","विवर्तन","परावर्तन"],correct:3,exp:"पेरिस्कोप समतल दर्पणों से प्रकाश के परावर्तन के सिद्धांत पर कार्य करता है।"},
+    {q:"निम्न में से किस माध्यम में प्रकाश की चाल सबसे अधिक है?",options:["Glass (1.5)","Water (1.33)","Kerosene (1.44)","Diamond (2.42)"],correct:1,exp:"अपवर्तनांक जितना कम होगा, प्रकाश की चाल उतनी अधिक होगी। दिए गए विकल्पों में जल (1.33) का अपवर्तनांक सबसे कम है।"},
+    {q:"पूर्ण आंतरिक परावर्तन नहीं हो सकता है जब प्रकाश जाता है:",options:["पानी से ग्लास","ग्लास से पानी","पानी से हवा","ग्लास से हवा"],correct:0,exp:"TIR तभी होता है जब प्रकाश सघन से विरल माध्यम में जाए। पानी से ग्लास जाने पर प्रकाश विरल से सघन में जाता है, अतः TIR संभव नहीं।"},
+    {q:"हमें हरी घास का रंग हरा दिखाई देता है क्योंकि:",options:["घास हरे रंग के प्रकाश को हमारी आँखों पर परावर्तित करती है","घास हरे रंग के प्रकाश को अवशोषित करती है","घास हरे रंग के अतिरिक्त सभी रंगों के प्रकाश की परावर्तित करती है","उपरोक्त में कोई नहीं"],correct:0,exp:"घास हरे रंग को छोड़कर बाकी सभी रंगों को अवशोषित कर लेती है और हरे रंग को परावर्तित करती है, इसलिए हरी दिखती है।"},
+    {q:"निकट दृष्टि दोष वाले व्यक्ति की आँख में प्रतिबिंब रेटिना के आगे बनता है, जिसे किस लेंस की सहायता से दूर किया जाता है?",options:["उत्तल लेंस","अवतल लेंस","बेलनाकार लेंस","द्विफोकसी लेंस"],correct:1,exp:"निकट दृष्टि दोष (Myopia) को अवतल लेंस से ठीक किया जाता है, जो प्रतिबिंब को रेटिना पर लाता है।"},
+    {q:"आवर्धक काँच (Magnifying glass) में किस लेंस का प्रयोग किया जाता है?",options:["उत्तल","अवतल","प्लानो अवतल","प्लानो उत्तल"],correct:0,exp:"आवर्धक काँच में उत्तल लेंस का प्रयोग होता है जो वस्तु का बड़ा, सीधा और आभासी प्रतिबिंब बनाता है।"}
+  ]
+},
+
+/* ---------------- CHAPTER 3: ऊष्मा (Heat) ---------------- */
+{
+  id:3,
+  title:"ऊष्मा (Heat)",
+  desc:"तापमान पैमाने, गुप्त उष्मा, ऊष्मा स्थानांतरण",
+  content:`
+  <h3>तापमान पैमाना</h3>
+  <div class="mini-table">
+    <tr><th></th><th>°C</th><th>°F</th><th>Kelvin</th></tr>
+    <tr><td>क्वथनांक (जल)</td><td>100°C</td><td>212°F</td><td>373.15 K</td></tr>
+    <tr><td>स्वस्थ मानव शरीर</td><td>37°C</td><td>98.6°F</td><td>310 K</td></tr>
+    <tr><td>हिमांक</td><td>0°C</td><td>32°F</td><td>273.15 K</td></tr>
+    <tr><td>न्यूनतम संभव तापमान</td><td>−273.15°C</td><td>−459.67°F</td><td>0 K</td></tr>
+  </div>
+  <p>तापमान की SI इकाई केल्विन है। Clinical Thermometer का परास: 35°C–42°C (94°F–108°F)।</p>
+  <div class="formula-box">सेल्सियस–फारेनहाइट संबंध: °C/5 = (°F−32)/9</div>
+  <div class="note-box">−40°C वह अकेला तापमान है जिस पर °C तथा °F एक समान पाठ्यांक प्रदर्शित करते हैं। +574.25 वह एकमात्र तापमान है जिस पर °F तथा Kelvin एक समान पाठ्यांक प्रदर्शित करते हैं।</div>
+  <div class="formula-box">सेल्सियस–केल्विन संबंध: °C = K − 273.15</div>
+  <ul>
+    <li>न्यूनतम संभव तापमान William Thomson Kelvin (Lord Kelvin) द्वारा दिया गया था।</li>
+    <li>शून्य केल्विन को परम शून्य तापमान (Absolute Zero) भी कहा जाता है; केल्विन पैमाने पर तापमान कभी भी ऋणात्मक नहीं हो सकता।</li>
+    <li>Zero केल्विन पर किसी पदार्थ के अणुओं के कम्पन रुक जाते हैं।</li>
+    <li>सेल्सियस और केल्विन पैमाने पर तापमान में अंतर समान होता है — यदि दो वस्तुओं के तापमान में अंतर (ΔT) 30°C हो तो केल्विन पैमाने पर भी वह अंतर 30 K होगा।</li>
+    <li>यदि सेल्सियस पैमाने पर अंतर x हो तो फारेनहाइट पैमाने पर अंतर 1.8x होगा।</li>
+  </ul>
+
+  <h3>विशिष्ट ऊष्मा क्षमता और गुप्त ऊष्मा</h3>
+  <ul>
+    <li><b>गुप्त ऊष्मा (Latent Heat):</b> वह ऊष्मा है जो अवस्था परिवर्तन में आवश्यक है (तापमान स्थिर रहता है)। गलन की गुप्त ऊष्मा (LHf) — बर्फ से पानी; वाष्पीकरण की गुप्त ऊष्मा (LHv) — पानी से भाप। उबलते हुए जल की अपेक्षा भाप से अधिक कष्टदायक जलन होती है क्योंकि भाप में वाष्पन की गुप्त ऊष्मा होती है।</li>
+    <li><b>विशिष्ट ऊष्मा (Specific Heat):</b> वह ऊष्मा जो इकाई द्रव्यमान का तापमान इकाई केल्विन बढ़ाने के लिए आवश्यक हो। SI मात्रक — जूल प्रति किग्रा-केल्विन। 1 कैलोरी = 4.2 जूल; जल की विशिष्ट ऊष्मा C = 1 cal/(g-°C)। गर्म जल की थैलियों में जल का उपयोग किया जाता है क्योंकि जल की विशिष्ट ऊष्मा बहुत उच्च होती है।</li>
+  </ul>
+
+  <h3>वाष्पीकरण (Vaporisation) बनाम वाष्पन (Evaporation)</h3>
+  <div class="mini-table">
+    <tr><th>वाष्पीकरण (Vaporisation)</th><th>वाष्पन (Evaporation)</th></tr>
+    <tr><td>एक निश्चित बिंदु (क्वथनांक) पर होती है</td><td>क्वथनांक से नीचे, बाकी सभी तापमान पर होती है</td></tr>
+    <tr><td>पूरे तरल में एक साथ होती है</td><td>केवल सतही घटना है</td></tr>
+  </div>
+  <ul>
+    <li>तापमान बढ़ने से वाष्पन की दर भी बढ़ती है; पृष्ठ क्षेत्रफल बढ़ने से वाष्पन की दर भी बढ़ती है; हवा की चाल बढ़ने से वाष्पन की दर भी बढ़ती है; आर्द्रता बढ़ने से वाष्पन की दर घटती है।</li>
+    <li>गर्म मौसम में पंखा आराम का एहसास पैदा करता है क्योंकि हमारा पसीना तेजी से वाष्पित होता है।</li>
+    <li>हाइग्रोमीटर सापेक्ष आर्द्रता मापने के लिए प्रयोग होता है। एनीमोमीटर हवा की गति मापने के लिए प्रयोग होता है।</li>
+    <li>थर्मोस्टेट तापमान बनाए रखने के लिए उपयोग होता है।</li>
+    <li>ठंडे देशों में थर्मामीटर तरल के रूप में पारे की तुलना में अल्कोहल को प्राथमिकता दी जाती है क्योंकि अल्कोहल का हिमांक (−114.5°C) पारे के हिमांक (−39°C) से बहुत कम होता है।</li>
+  </ul>
+
+  <h3>जल का असामान्य व्यवहार</h3>
+  <div class="mini-table">
+    <tr><th>तापमान परास</th><th>आयतन/घनत्व</th></tr>
+    <tr><td>0°C – 4°C</td><td>आयतन घटता है, घनत्व बढ़ता है</td></tr>
+    <tr><td>4°C पर</td><td>आयतन न्यूनतम, घनत्व अधिकतम</td></tr>
+    <tr><td>4°C से ऊपर</td><td>आयतन बढ़ता है, घनत्व घटता है</td></tr>
+  </div>
+  <ul>
+    <li>पानी के जमने के दौरान इसका आयतन बढ़ता है, इसलिए काँच की भरी बोतल फ्रीजर में फट जाती है और सर्दियों में पाइपलाइन फट जाती है।</li>
+    <li>बर्फ के पिघलने के दौरान इसका आयतन लगभग 10% घटता है, इसलिए बर्फ पिघलने के बाद बीकर में पानी का स्तर सामान रहता है।</li>
+  </ul>
+
+  <h3>ऊष्मा स्थानांतरण के तरीके</h3>
+  <p>ऊष्मा हमेशा उच्च तापमान वाली वस्तु से निम्न तापमान वाली वस्तु की ओर स्थानांतरण करती है।</p>
+  <ul>
+    <li><b>चालन (Conduction):</b> बिना पदार्थ के कणों की वास्तविक गति के ऊष्मा का एक स्थान से दूसरे स्थान तक आना। यह ठोस, तरल व गैस तीनों अवस्थाओं में होता है (निर्वात को छोड़कर), किंतु ठोस में सबसे अच्छा।</li>
+    <li><b>संवहन (Convection):</b> पदार्थ के कणों की वास्तविक गति से ऊष्मा का स्थानांतरण; केवल तरल और गैसों में होता है।</li>
+    <li><b>विकिरण (Radiation):</b> बिना किसी माध्यम की आवश्यकता के ऊष्मा का एक स्थान से दूसरे तक जाना; ठोस, द्रव, गैस, निर्वात — सभी अवस्थाओं में होता है।</li>
+  </ul>
+  <div class="note-box">1 atm = 1.01325×10⁵ Pa = 1.01325 Bar = 760 mm of Hg Column</div>
+  <p>पहाड़ों पर खाना देर से पकता है क्योंकि ऊँचाई बढ़ने पर दाब में कमी आ जाती है जिससे पानी का क्वथनांक बिंदु 100°C से नीचे चला जाता है। प्रेशर कुकर में खाना जल्दी पक जाता है क्योंकि कुकर के अंदर दाब बढ़ने से पानी का क्वथनांक भी बढ़ जाता है, अर्थात् पानी 100°C से उच्च तापमान पर उबलता है।</p>
+
+  <h3>न्यूटन का शीतलन नियम</h3>
+  <p>किसी वस्तु के ठंडा होने की दर, उस वस्तु और वातावरण के तापांतर के समानुपाती होती है।</p>
+
+  <h3>महत्वपूर्ण अवधारणाएँ</h3>
+  <ul>
+    <li>एक आदर्श कृष्णिका (Blackbody) एक अच्छा अवशोषक व उत्सर्जक दोनों होती है।</li>
+    <li>ऊष्मागतिक प्रक्रम जहाँ परिवेश के साथ कोई ऊष्मा का आदान-प्रदान नहीं होता — रुद्धोष्म प्रक्रम (Adiabatic, ΔQ=0)।</li>
+    <li>एक तरल के क्वथनांक में दाब में वृद्धि तथा अशुद्धियों के मिलने दोनों के साथ वृद्धि होती है।</li>
+    <li>एक गैस के एक आदर्श गैस की तरह व्यवहार करने के लिए शर्तें: उच्च तापमान, निम्न दाब।</li>
+    <li>किसी गैस को द्रवित करने का सबसे आसान तरीका: निम्न ताप, उच्च दाब।</li>
+    <li>सफेद कपड़ा गर्मियों में आरामदायक होता है क्योंकि वह उन पर पड़ने वाली सभी ऊष्मा को परावर्तित करता है।</li>
+    <li>ऊष्मा दर्पण द्वारा परावर्तित की जा सकती है; ऊष्मा ऊर्जा का एक रूप है; ऊष्मा एक विद्युत चुम्बकीय विकिरण भी है (विकिरण के रूप में) — किन्तु ऊष्मा निर्वात से नहीं गुजर सकती, यह कथन गलत है (विकिरण द्वारा ऊष्मा निर्वात से गुजर सकती है)।</li>
+  </ul>
+  `,
+  mcqs:[
+    {q:"ठंडे देशों में थर्मामीटर तरल के रूप में पारे की तुलना में अल्कोहल को प्राथमिकता दी जाती है क्योंकि:",options:["अल्कोहल का हिमांक कम होता है","शराब गर्मी का एक बेहतर संवाहक है","शराब पारे से सस्ता है","शराब का विश्व उत्पादन पारे की तुलना में अधिक है"],correct:0,exp:"अल्कोहल का हिमांक (−114.5°C) पारे के हिमांक (−39°C) से बहुत कम है, इसलिए यह अत्यधिक ठंडे स्थानों में भी जमता नहीं और तापमान माप सकता है।"},
+    {q:"विकिरण वह प्रक्रिया है जिसमें ऊष्मा एक स्थान से दूसरे तक पहुँचती है:",options:["बिना पदार्थ के कणों की वास्तविक गति के","कंपन कर रहे कणों की वास्तविक गति से","बिना किसी माध्यम की आवश्यकता के","परमाणुओं की गति से"],correct:2,exp:"विकिरण (Radiation) में ऊष्मा बिना किसी माध्यम के एक स्थान से दूसरे स्थान तक पहुँचती है, यह निर्वात में भी हो सकता है।"},
+    {q:"कोई हॉट फ्लास्क लंबे समय तक गर्म या ठंडा रहता है क्योंकि किसके द्वारा ऊष्मा का कोई नुकसान या लाभ नहीं होता?",options:["चालन","संवहन और विकिरण","चालन व संवहन और विकिरण","इनमें से कोई नहीं"],correct:2,exp:"वैक्यूम फ्लास्क की डिज़ाइन चालन, संवहन और विकिरण तीनों प्रकार के ऊष्मा स्थानांतरण को कम करती है, इसलिए यह लंबे समय तक तापमान बनाए रखता है।"},
+    {q:"संवहन द्वारा ऊष्मा का स्थानांतरण हो सकता है:",options:["ठोस और तरल पदार्थ","ठोस और निर्वात","गैस और तरल पदार्थ","वैक्यूम और गैसें"],correct:2,exp:"संवहन (Convection) केवल तरल और गैसों में होता है क्योंकि इसमें कणों की वास्तविक गति आवश्यक होती है।"},
+    {q:"किस वजह से कुछ खाली जगह दो रेलवे पटरियों के जोड़ों के बीच छोड़ी जाती है?",options:["तापीय संकुचन","तापीय विस्तार","भारी दुई रेलगाड़ियों के लिए","इनमें से कोई नहीं"],correct:1,exp:"गर्मी में धातु की पटरियाँ तापीय विस्तार (thermal expansion) के कारण फैलती हैं, इसलिए क्षति से बचने के लिए जोड़ों पर खाली जगह छोड़ी जाती है।"},
+    {q:"गर्मियों में सफेद कपड़ा पहनना आरामदायक होता है क्योंकि:",options:["वे उन पर पड़ने वाली सभी ऊष्मा को परावर्तित करते हैं","वे शरीर से स्थानांतरित ऊष्मा को विकिरित करते हैं","वे पसीना अवशोषित करते हैं","वे आँख के लिए सुखदायक हैं"],correct:0,exp:"सफेद रंग सभी वर्णों के प्रकाश/ऊष्मा को परावर्तित कर देता है, जिससे कम ऊष्मा अवशोषित होती है और ठंडक महसूस होती है।"},
+    {q:"एक आदर्श कृष्णिका (Blackbody) में अद्वितीय विशेषता है:",options:["एक अच्छा अवशोषक केवल","एक अच्छा उत्सर्जक केवल","एक अच्छा अवशोषक व उत्सर्जक दोनों","न तो उत्सर्जक न ही अवशोषक"],correct:2,exp:"आदर्श कृष्णिका (blackbody) समस्त आपतित विकिरण को अवशोषित करती है और सर्वोत्तम उत्सर्जक भी होती है।"},
+    {q:"एक ऊष्मागतिक प्रक्रम जहाँ परिवेश के साथ कोई ऊष्मा का आदान-प्रदान नहीं होता, कहलाता है:",options:["समतापी प्रक्रम (निश्चित तापमान)","रुद्धोष्म प्रक्रम (ΔQ=0)","समदाबी प्रक्रम (निश्चित दाब)","समआयतनिक प्रक्रम (निश्चित आयतन)"],correct:1,exp:"रुद्धोष्म (Adiabatic) प्रक्रम में परिवेश के साथ ऊष्मा का कोई आदान-प्रदान नहीं होता, अर्थात् ΔQ = 0।"},
+    {q:"किसी गैस को द्रवित करने का सबसे आसान तरीका दर्शाता है:",options:["उच्च ताप, निम्न दाब","उच्च ताप, उच्च दाब","निम्न ताप, निम्न दाब","निम्न ताप, उच्च दाब"],correct:3,exp:"निम्न तापमान और उच्च दाब पर अणु एक-दूसरे के करीब आ जाते हैं, जिससे गैस आसानी से द्रवित हो जाती है।"},
+    {q:"हाइड्रोमीटर का उपयोग किसे मापने के लिए किया जाता है?",options:["सापेक्ष आर्द्रता","तापीय विस्तार","वायुमंडलीय तापमान","उपरोक्त में कोई नहीं"],correct:0,exp:"हाइग्रोमीटर (Hydrometer/Hygrometer) का उपयोग वायु की सापेक्ष आर्द्रता मापने के लिए किया जाता है।"}
+  ]
+},
+
+/* ---------------- CHAPTER 4: वैद्युतिकी (Electricity) ---------------- */
+{
+  id:4,
+  title:"वैद्युतिकी (Electricity)",
+  desc:"परमाणु संरचना, विभवांतर, प्रतिरोध, ओम का नियम, विद्युत शक्ति",
+  content:`
+  <h3>परमाणु (Atom) संरचना</h3>
+  <ul>
+    <li>किसी भी परमाणु के केंद्रक में नाभिक (Nucleus) होता है जिसमें प्रोटॉन तथा न्यूट्रॉन स्थित होते हैं; इलेक्ट्रॉन इस नाभिक के चारों ओर चक्कर लगाते हैं।</li>
+    <li>इलेक्ट्रॉन पर आवेश = −1.6×10⁻¹⁹ कूलॉम (−e); द्रव्यमान mₑ = 9.1×10⁻³¹ kg</li>
+    <li>प्रोटॉन पर आवेश = +1.6×10⁻¹⁹ कूलॉम; द्रव्यमान mₚ = 1.673×10⁻²⁷ kg</li>
+    <li>न्यूट्रॉन पर कोई आवेश नहीं होता; द्रव्यमान mₙ = 1.675×10⁻²⁷ kg</li>
+    <li>Electron, Proton तथा Neutron के द्रव्यमान का क्रम: mₙ > mₚ > mₑ</li>
+    <li>समान प्रकृति के आवेश एक-दूसरे को प्रतिकर्षित करते हैं जबकि विपरीत प्रकृति के आवेश एक-दूसरे को आकर्षित करते हैं।</li>
+    <li>नाभिक के चारों ओर चक्कर लगा रहे इलेक्ट्रॉन की कुल ऊर्जा ऋणात्मक होती है (किसी भी बंधी हुई अवस्था के लिए कुल ऊर्जा हमेशा ऋणात्मक होती है)।</li>
+    <li>वह इलेक्ट्रॉन जो परमाणुओं में बंधा हुआ नहीं है, मुक्त इलेक्ट्रॉन कहलाता है।</li>
+  </ul>
+
+  <h3>चालक, कुचालक, अर्धचालक</h3>
+  <div class="mini-table">
+    <tr><th>प्रकार</th><th>मुक्त इलेक्ट्रॉन</th><th>उदाहरण</th></tr>
+    <tr><td>चालक (Conductor)</td><td>अरबों की संख्या में</td><td>सभी धातु, सादा जल, मानव शरीर</td></tr>
+    <tr><td>कुचालक (Insulator)</td><td>शून्य</td><td>सूखी लकड़ी, रबड़, प्लास्टिक, हीरा, आसुत जल (Distilled)</td></tr>
+    <tr><td>अर्धचालक (Semi-conductor)</td><td>बहुत कम</td><td>Silicon, Germanium</td></tr>
+  </div>
+  <p>मरकरी, सीजियम तथा गैलियम वे धातुएँ हैं जो कमरे के तापमान पर तरल अवस्था में पाई जाती हैं। ब्रोमीन एक अधातु है जो कमरे के तापमान पर तरल अवस्था में पाई जाती है। प्राकृतिक उपलब्ध पानी के स्रोतों में से वर्षा का जल सबसे शुद्ध होता है।</p>
+
+  <h3>विभवांतर (Potential Difference)</h3>
+  <ul>
+    <li>विभवांतर का दूसरा नाम वोल्टेज होता है।</li>
+    <li>ऋणात्मक आवेश निम्न विभव से उच्च विभव की ओर चलता है।</li>
+    <li>विद्युत धारा उच्च विभव से निम्न विभव की ओर चलती है।</li>
+    <li>किसी परिपथ में विद्युत प्रवाह इलेक्ट्रॉन द्वारा संभव होता है, परंतु परंपरागत धारा की दिशा इलेक्ट्रॉन के प्रवाह की दिशा के विपरीत मानी जाती है।</li>
+    <li>तार में विद्युत धारा के प्रवाहित होने के लिए तार के सिरों में विभवांतर का होना आवश्यक है।</li>
+  </ul>
+
+  <h3>वैद्युत धारा (Electric Current)</h3>
+  <div class="formula-box">I = Q/t (कूलॉम/सेकंड);  Q = ne;  1 एम्पियर = 1 कूलॉम/सेकंड</div>
+  <p>वैद्युत धारा का SI मात्रक एम्पियर है। एम्पियर = कूलॉम/सेकंड के समान है (Volt/Second, Watt/Second, Joule/Second नहीं)। संभव आवेश हमेशा e के पूर्णांक गुणज (e, 2e, 3e, 4e...) में ही होता है।</p>
+
+  <h3>वैद्युत प्रतिरोध (Resistance)</h3>
+  <ul>
+    <li>लंबे और पतले तार का प्रतिरोध ज्यादा होता है; छोटे और मोटे तार का प्रतिरोध कम होता है।</li>
+    <li>प्रतिरोध का SI मात्रक ओम (Ω) होता है।</li>
+  </ul>
+  <div class="formula-box">R ∝ ℓ (लंबाई); R ∝ 1/A (अनुप्रस्थ काट क्षेत्रफल) ⇒ R = ρℓ/A
+  ρ = प्रतिरोधकता (विशिष्ट प्रतिरोध), मात्रक — ohm-मीटर</div>
+  <p>प्रतिरोधकता, तार की लंबाई और उसके अनुप्रस्थ काट के क्षेत्रफल पर निर्भर नहीं करती; यह तार के पदार्थ और तापमान पर निर्भर करती है। सिल्वर की प्रतिरोधकता सबसे कम होती है (ρ = 1.6×10⁻⁸ Ω-m)।</p>
+  <div class="formula-box">चालकता (Conductance) G₁ = 1/R; SI मात्रक — ohm⁻¹ / mho (Siemens)
+  विशिष्ट चालकता σ = 1/ρ; मात्रक — mho/meter या Siemens/meter</div>
+  <p>चालक का प्रतिरोध शून्य की ओर जाने पर चालकता अनंत की ओर जाती है, और कुचालक का प्रतिरोध अनंत की ओर जाने पर चालकता शून्य की ओर जाती है। प्रतिरोधकता चालक के आकार और रूप से स्वतंत्र है (केवल पदार्थ व तापमान पर निर्भर)।</p>
+
+  <h3>प्रतिरोध पर तापमान का प्रभाव</h3>
+  <ul>
+    <li>चालक: तापमान↑ ⇒ प्रतिरोध↑</li>
+    <li>अर्धचालक: तापमान↑ ⇒ प्रतिरोध↓</li>
+    <li>0 केल्विन पर, अर्धचालक कुचालकों की भाँति व्यवहार करते हैं।</li>
+    <li>अत्यधिक कम तापमान पर, चालक अति-चालकों (Superconductor) की भाँति व्यवहार करते हैं।</li>
+    <li>4.2 K अर्थात् −268.8°C पर मरकरी (पारा) अति-चालक की भाँति व्यवहार करती है।</li>
+    <li>अति-चालक वह चालक है जो कम से कम प्रतिरोध प्रदान करे (R≈0)।</li>
+    <li>परम शून्य तापमान पर, अति-चालक में विद्युत प्रतिरोध शून्य होता है और चालकता अनंत होती है।</li>
+  </ul>
+
+  <h3>ओम का नियम (1827–1828)</h3>
+  <div class="formula-box">V = IR (V∝I); R = नियतांक; 1 ओम = 1 वोल्ट/एम्पियर</div>
+  <p>ओम का नियम केवल चालकों (ohmic conductors) के लिए वैध है।</p>
+  <div class="mini-table">
+    <tr><th>श्रेणीक्रम (Series)</th><th>समांतर क्रम (Parallel)</th></tr>
+    <tr><td>R_तुल्य = R₁+R₂+...</td><td>1/R_तुल्य = 1/R₁+1/R₂+...</td></tr>
+    <tr><td>प्रत्येक तत्व से समान धारा</td><td>प्रत्येक तत्व पर समान विभवांतर</td></tr>
+  </div>
+  <div class="note-box">House wiring में तारों का क्रम समांतर क्रम (Parallel) में होता है।</div>
+
+  <h3>वैद्युत शक्ति (Electric Power)</h3>
+  <div class="formula-box">P = ऊर्जा/समय = E/t;  1 वाट = 1 जूल/सेकंड
+  P = VI = I²R = V²/R</div>
+  <p>1 किलोवाट घंटा (यूनिट) = 1×1000×1J×3600s = 3.6×10⁶ जूल। यूनिटों की संख्या = (वाट×घंटा)/1000</p>
+
+  <h3>धारा के उष्मीय प्रभाव</h3>
+  <div class="formula-box">H = I²Rt = VIt = (V²/R)t</div>
+  <p>तार में धारा का मान दोगुना करने पर उष्मीय प्रभाव चार गुना हो जाता है (H ∝ I²)।</p>
+  <ul>
+    <li><b>फ्यूज तार:</b> गलनांक निम्न, प्रतिरोध उच्च, विशिष्ट चालकता उच्च; सीसा और टिन (Pb+Sn) के मिश्रधातु से बना होता है; धारा के उष्मीय प्रभाव पर कार्य करता है।</li>
+    <li><b>वैद्युत हीटर:</b> तार का गलनांक उच्च, प्रतिरोध उच्च; पदार्थ — Nichrome (Ni+Cr+Mn+Fe); धारा के उष्मीय प्रभाव पर कार्य करता है।</li>
+    <li><b>वैद्युत बल्ब:</b> तंतु (Filament) टंग्स्टन धातु का बना होता है (उच्च गलनांक ~3400°C, उच्च प्रतिरोध); अंदर नाइट्रोजन तथा आर्गन गैस भरी होती है; धारा के उष्मीय प्रभाव पर कार्य करता है।</li>
+  </ul>
+
+  <h3>यंत्र</h3>
+  <ul>
+    <li><b>अमीटर:</b> विद्युत धारा मापने में काम आता है; परिपथ के साथ श्रेणीक्रम में जुड़ा होता है; प्रतिरोध निम्न (आदर्श अमीटर का प्रतिरोध शून्य)।</li>
+    <li><b>वोल्टमीटर:</b> विभवांतर मापने में काम आता है; परिपथ के साथ समांतर क्रम में जुड़ा होता है; प्रतिरोध उच्च (आदर्श वोल्टमीटर का प्रतिरोध अनंत)।</li>
+    <li><b>दिष्टकारी (Rectifier):</b> प्रत्यावर्ती धारा (AC) को दिष्ट धारा (DC) में बदलता है। भारत में AC की आवृत्ति 50 Hz है।</li>
+    <li><b>Inverter:</b> दिष्ट धारा (DC) को प्रत्यावर्ती धारा (AC) में बदलता है।</li>
+    <li><b>Galvanometer:</b> दुर्बल विद्युत धारा ज्ञात करने तथा उसकी दिशा पता लगाने में काम आता है; अमीटर की अपेक्षा अधिक संवेदनशील; केवल दिष्ट धारा (DC) पर कार्य करता है।</li>
+    <li><b>Transformer:</b> उच्चायी (Step-up) — वोल्टेज बढ़ाता है, धारा घटाता है; अपचायी (Step-down) — वोल्टेज घटाता है, धारा बढ़ाता है। गाँवों/शहरों में उपयोग होने वाले ट्रांसफॉर्मर अपचायी होते हैं। सिद्धांत — ऊर्जा संरक्षण, विद्युत चुंबकीय प्रेरण व अन्योन्य प्रेरण, फैराडे के नियम पर।</li>
+  </ul>
+
+  <h3>किरचॉफ के नियम एवं कूलॉम का नियम</h3>
+  <div class="formula-box">किरचॉफ का पहला नियम (धारा नियम): ΣI(आने वाली) = ΣI(जाने वाली) — आवेश संरक्षण सिद्धांत पर आधारित
+  किरचॉफ का दूसरा नियम (वोल्टेज नियम): ऊर्जा संरक्षण सिद्धांत पर आधारित</div>
+  <div class="formula-box">कूलॉम का नियम: F = K·q₁q₂/r²; K = 9×10⁹ N-m²/C²
+  यदि r→2r, तब F₂ = F₁/4;  यदि r→r/2, तब F₂ = 4F₁</div>
+  `,
+  mcqs:[
+    {q:"किसी परिपथ में विद्युत प्रवाह किसके द्वारा संभव होता है?",options:["Neutron","Electron","Proton","Positron"],correct:1,exp:"परिपथ में विद्युत धारा वास्तव में मुक्त इलेक्ट्रॉनों के प्रवाह के कारण होती है।"},
+    {q:"इनमें से कौन रासायनिक ऊर्जा को विद्युत ऊर्जा में बदलता है?",options:["Motor","Dynamo","Generator","Battery"],correct:3,exp:"बैटरी में रासायनिक अभिक्रिया द्वारा रासायनिक ऊर्जा को विद्युत ऊर्जा में बदला जाता है।"},
+    {q:"एक तार में धारा की परंपरागत दिशा होती है:",options:["तार के माध्यम से e⁻ के प्रवाह की दिशा के समान","तार के माध्यम से e⁻ के प्रवाह की दिशा के विपरीत","तार के माध्यम से न्यूट्रॉन के प्रवाह की दिशा के समान","तार के माध्यम से न्यूट्रॉन के प्रवाह की दिशा के विपरीत"],correct:1,exp:"परंपरागत धारा की दिशा को इलेक्ट्रॉन प्रवाह की दिशा के विपरीत माना जाता है क्योंकि इलेक्ट्रॉन ऋणात्मक आवेशित होते हैं।"},
+    {q:"एक धारावाही अच्छा चालक है:",options:["ऋणात्मक आवेशित","धनात्मक आवेशित","विद्युत तटस्थ","कभी धनात्मक तो कभी ऋणात्मक आवेशित"],correct:2,exp:"एक साधारण धारावाही चालक समग्र रूप से विद्युत तटस्थ (neutral) होता है — उसमें बराबर मात्रा में धनात्मक व ऋणात्मक आवेश होते हैं।"},
+    {q:"एक एम्पियर समान है:",options:["Volt/second","Watt/second","Joule/second","Coulomb/second"],correct:3,exp:"धारा I = Q/t से, एम्पियर = कूलॉम/सेकंड (1A = 1C/s)।"},
+    {q:"निम्न में से कौन सा आवेश संभव नहीं है?",options:["1.6×10⁻¹⁹C = e","3.2×10⁻¹⁹C = 2e","4.8×10⁻¹⁹C = 4e","0.5×10⁻¹⁹C = 0.5e"],correct:2,exp:"आवेश हमेशा e के पूर्णांक गुणज होता है (Q=ne, n=1,2,3...)। 4.8×10⁻¹⁹ वास्तव में 3e है, इसे 4e बताना गलत है, और 0.5e एक भिन्नात्मक गुणज है जो असंभव है। सही उत्तर विकल्प (d) है क्योंकि 0.5 पूर्णांक नहीं है।"},
+    {q:"अतिचालकता में परम शून्य तापमान पर, कुचालक में विद्युत प्रतिरोध होता है:",options:["अनंत","अल्प","उच्च","शून्य"],correct:3,exp:"नोट के अनुसार परम शून्य तापमान पर अतिचालक में प्रतिरोध शून्य होता है और चालकता अनंत होती है।"},
+    {q:"ओम का नियम किसी दिए गए प्रतिरोध के लिए विभवांतर और ___ से संबंधित है:",options:["शक्ति","ऊर्जा","धारा","समय"],correct:2,exp:"ओम का नियम V=IR के अनुसार विभवांतर (V) और धारा (I) के बीच संबंध बताता है।"},
+    {q:"2, 4 और 8 ओम प्रतिरोध वाले तीन प्रतिरोधक समांतर क्रम में जुड़े हुए हैं। निकाय का तुल्य प्रतिरोध होगा:",options:["2Ω से कम","2Ω से अधिक, 4Ω से कम","4Ω","14Ω"],correct:0,exp:"1/Req = 1/2+1/4+1/8 = 7/8, अतः Req = 8/7 Ω ≈ 1.14Ω, जो 2Ω से कम है।"},
+    {q:"बिजली के बल्ब पर प्रदर्शित बिजली की रेटिंग 100 वाट का क्या मतलब है?",options:["बल्ब प्रति घंटे 100 जूल विद्युत ऊर्जा की खपत करता है","बल्ब प्रति सेकंड 100 जूल विद्युत ऊर्जा की खपत करता है","बल्ब प्रति मिनट 100 जूल विद्युत ऊर्जा की खपत करता है","बल्ब प्रति घंटे 100 किलो विद्युत ऊर्जा की खपत करता है"],correct:1,exp:"शक्ति P = ऊर्जा/समय; 100 वाट का अर्थ है बल्ब प्रति सेकंड 100 जूल ऊर्जा की खपत करता है (1 वाट = 1 जूल/सेकंड)।"}
+  ]
+},
+
+/* ---------------- CHAPTER 5: चुम्बकत्व (Magnetism) ---------------- */
+{
+  id:5,
+  title:"चुम्बकत्व (Magnetism)",
+  desc:"चुम्बकीय ध्रुव, बल रेखाएँ, फ्लेमिंग के नियम, चुम्बकीय पदार्थ",
+  content:`
+  <h3>चुंबक और चुंबकीय ध्रुव</h3>
+  <ul>
+    <li>प्राकृतिक चुंबक आयरन का एक अयस्क है जिसका नाम मैग्नेटाइट है (Magnetite — Fe₃O₄)।</li>
+    <li>चुंबक के समान ध्रुव एक-दूसरे को प्रतिकर्षित करते हैं जबकि विपरीत ध्रुव एक-दूसरे को आकर्षित करते हैं।</li>
+    <li>जब किसी चुंबक को मध्य हवा में स्वतंत्र रूप से लटकाया जाता है तो यह हमेशा उत्तर-दक्षिण दिशा की ओर इंगित करता है। भौगोलिक उत्तर की ओर इंगित करने वाले ध्रुव को उत्तरी ध्रुव तथा भौगोलिक दक्षिण की ओर इंगित करने वाले ध्रुव को दक्षिण ध्रुव कहा जाता है।</li>
+    <li>एकल ध्रुव (Monopole) का कोई अस्तित्व नहीं होता — चुंबक के दो ध्रुव हमेशा साथ-साथ पाए जाते हैं।</li>
+  </ul>
+
+  <h3>चुंबकीय बल रेखाएँ</h3>
+  <ul>
+    <li>चुंबकीय बल रेखाएँ चुंबक के अंदर दक्षिण से उत्तर दिशा में होती हैं तथा चुंबक के बाहर उत्तर से दक्षिण दिशा में होती हैं।</li>
+    <li>चुंबकीय बल रेखाएँ एक-दूसरे को आपस में कभी भी नहीं काटती हैं।</li>
+    <li>चुंबकीय बल रेखाएँ पास-पास हों तो प्रबल चुंबकीय क्षेत्र होगा; दूर-दूर हों तो दुर्बल चुंबकीय क्षेत्र होगा।</li>
+    <li>समांतर चुंबकीय बल रेखाएँ एक समान चुंबकीय क्षेत्र को प्रदर्शित करती हैं।</li>
+  </ul>
+  <div class="formula-box">चुंबकीय क्षेत्र की तीव्रता का SI मात्रक — टेस्ला (Tesla); CGS में — गॉस (Gauss)
+  1 टेस्ला = 10⁴ गॉस = 1 वेबर/मीटर²</div>
+  <p>धारावाही चालक चुंबकीय क्षेत्र उत्पन्न करते हैं। चुंबकीय क्षेत्र एक सदिश राशि है। μ₀ = निर्वात की वैद्युत शीलता; μ₀/4π = 10⁻⁷ न्यूटन/m²</p>
+
+  <h3>चुंबकीय क्षेत्र में बल</h3>
+  <div class="formula-box">धारावाही चालक पर बल: F = BIL sinθ
+  θ=0° (चालक क्षेत्र के समांतर) ⇒ F=0
+  θ=90° (चालक क्षेत्र के लंबवत) ⇒ F=अधिकतम</div>
+  <div class="formula-box">आवेशित कण पर बल: F = qvB sinθ
+  θ=0° ⇒ F=0;  θ=90° ⇒ F=अधिकतम</div>
+  <p>यदि किसी आवेशित कण पर चुंबकीय क्षेत्र में बल शून्य है तो इसका मतलब है कि वह चुंबकीय क्षेत्र की दिशा में भाग रहा है। यदि कोई आवेशित कण विरामावस्था में हो तो उस पर लगने वाला चुंबकीय बल शून्य होगा जबकि विद्युत बल (F=qE) अपना ही लगेगा।</p>
+
+  <h3>फ्लेमिंग के नियम</h3>
+  <ul>
+    <li><b>फ्लेमिंग का बायाँ हाथ का नियम:</b> मोटर के लिए प्रयुक्त — जब बल, चुंबकीय क्षेत्र व धारा की दिशा ज्ञात करनी हो (उदाहरण — इलेक्ट्रिक मोटर, पंखे)।</li>
+    <li><b>फ्लेमिंग का दायाँ हाथ का नियम:</b> जनरेटर के लिए प्रयुक्त — चालक की गति, चुंबकीय क्षेत्र व प्रेरित धारा की दिशा ज्ञात करने के लिए (उदाहरण — जनरेटर)।</li>
+  </ul>
+
+  <h3>चुंबकीय पदार्थों के प्रकार</h3>
+  <div class="mini-table">
+    <tr><th>प्रकार</th><th>व्यवहार</th><th>उदाहरण</th></tr>
+    <tr><td>अनुचुंबकीय (Paramagnetic)</td><td>चुंबकीय क्षेत्र की ओर हल्की रूप से आकर्षित</td><td>ऑक्सीजन, एल्युमीनियम, टिन</td></tr>
+    <tr><td>प्रतिचुंबकीय (Diamagnetic)</td><td>चुंबकीय क्षेत्र की ओर दुर्बल रूप से प्रतिकर्षित</td><td>हाइड्रोजन, बेरीलियम</td></tr>
+    <tr><td>लौहचुंबकीय (Ferromagnetic)</td><td>चुंबकीय क्षेत्र की ओर प्रबल रूप से आकर्षित</td><td>Fe, Co, Ni</td></tr>
+  </div>
+  <p>प्रति-लौह-चुंबकीय पदार्थ का उदाहरण — Cr (क्रोमियम)।</p>
+  <p><b>क्यूरी तापमान (Curie Temperature):</b> वह तापमान है जिसके ऊपर कोई पदार्थ अनुचुंबकीय तथा उससे नीचे लौहचुंबकीय गुणों को दर्शाता है।</p>
+  `,
+  mcqs:[
+    {q:"प्राकृतिक चुंबक आयरन का एक अयस्क है जिसका नाम है:",options:["हेमेटाइट","मैग्नेटाइट (Fe₃O₄)","बॉक्साइट","सिडेराइट"],correct:1,exp:"प्राकृतिक चुंबक मैग्नेटाइट (Fe₃O₄) है।"},
+    {q:"जब किसी चुंबक को मध्य हवा में स्वतंत्र रूप से लटकाया जाता है तो यह किस दिशा की ओर इंगित करता है?",options:["पूर्व-पश्चिम","उत्तर-दक्षिण","केवल पूर्व","केवल दक्षिण"],correct:1,exp:"स्वतंत्र रूप से लटका चुंबक हमेशा भौगोलिक उत्तर-दक्षिण दिशा की ओर इंगित करता है।"},
+    {q:"चुंबकीय बल रेखाओं के बारे में निम्न में से कौन सा कथन सही है?",options:["वे आपस में एक-दूसरे को काटती हैं","वे कभी भी आपस में एक-दूसरे को नहीं काटतीं","वे केवल चुंबक के बाहर पाई जाती हैं","वे सीधी रेखाओं में ही होती हैं"],correct:1,exp:"चुंबकीय बल रेखाएँ कभी भी एक-दूसरे को नहीं काटतीं — यदि वे काटें तो किसी बिंदु पर दो दिशाओं का चुंबकीय क्षेत्र होना असंभव सा प्रतीत होगा।"},
+    {q:"चुंबकीय क्षेत्र की तीव्रता का SI मात्रक है:",options:["गॉस (Gauss)","टेस्ला (Tesla)","वेबर (Weber)","हेनरी (Henry)"],correct:1,exp:"चुंबकीय क्षेत्र की तीव्रता का SI मात्रक टेस्ला है; CGS पद्धति में इसे गॉस कहते हैं (1 टेस्ला = 10⁴ गॉस)।"},
+    {q:"किसी धारावाही चालक पर चुंबकीय क्षेत्र में लगने वाला बल F = BIL sinθ द्वारा दिया जाता है। यदि चालक चुंबकीय क्षेत्र के समांतर रखा है (θ=0°), तो बल होगा:",options:["अधिकतम","शून्य","अनंत","आधा अधिकतम"],correct:1,exp:"θ=0° पर sinθ=0, इसलिए F=0 अर्थात् बल शून्य होगा।"},
+    {q:"यदि किसी आवेशित कण पर चुंबकीय क्षेत्र में लगने वाला बल शून्य है, तो इसका क्या अर्थ है?",options:["कण विरामावस्था में है","कण चुंबकीय क्षेत्र की दिशा में भाग रहा है","कण की दिशा क्षेत्र के लंबवत है","कण पर कोई आवेश नहीं है"],correct:1,exp:"F=qvBsinθ में, यदि θ=0° (अर्थात् कण की गति चुंबकीय क्षेत्र की दिशा के समांतर) हो, तब F=0 होगा।"},
+    {q:"इलेक्ट्रिक मोटर की दिशा ज्ञात करने के लिए किस नियम का उपयोग किया जाता है?",options:["फ्लेमिंग का दायाँ हाथ का नियम","फ्लेमिंग का बायाँ हाथ का नियम","लेंज़ का नियम","एम्पियर का नियम"],correct:1,exp:"मोटर (जहाँ धारा व चुंबकीय क्षेत्र से बल उत्पन्न होता है) के लिए फ्लेमिंग का बायाँ हाथ का नियम प्रयुक्त होता है।"},
+    {q:"जनरेटर में प्रेरित धारा की दिशा ज्ञात करने के लिए किस नियम का उपयोग किया जाता है?",options:["फ्लेमिंग का बायाँ हाथ का नियम","फ्लेमिंग का दायाँ हाथ का नियम","न्यूटन का नियम","ओम का नियम"],correct:1,exp:"जनरेटर (जहाँ गति व चुंबकीय क्षेत्र से प्रेरित धारा उत्पन्न होती है) के लिए फ्लेमिंग का दायाँ हाथ का नियम प्रयुक्त होता है।"},
+    {q:"निम्न में से कौन सा पदार्थ लौहचुंबकीय (Ferromagnetic) है?",options:["ऑक्सीजन","हाइड्रोजन","निकल (Ni)","बेरीलियम"],correct:2,exp:"Fe, Co, Ni लौहचुंबकीय पदार्थ हैं जो चुंबकीय क्षेत्र की ओर प्रबल रूप से आकर्षित होते हैं।"},
+    {q:"क्यूरी तापमान का क्या अर्थ है?",options:["वह तापमान जिसके ऊपर पदार्थ चुंबकीय गुण खो देता है और अनुचुंबकीय हो जाता है","वह तापमान जिस पर चुंबक पिघल जाता है","वह तापमान जिस पर चुंबक जम जाता है","वह तापमान जो सभी चुंबकों के लिए समान होता है"],correct:0,exp:"क्यूरी तापमान वह तापमान है जिसके ऊपर कोई पदार्थ लौहचुंबकीय गुण खोकर अनुचुंबकीय व्यवहार दर्शाने लगता है।"}
+  ]
+},
+
+/* ---------------- CHAPTER 6: शुद्ध गतिकी (Kinematics) ---------------- */
+{
+  id:6,
+  title:"शुद्ध गतिकी (Kinematics)",
+  desc:"दूरी-विस्थापन, चाल-वेग, त्वरण",
+  content:`
+  <h3>दूरी और विस्थापन</h3>
+  <p>दो बिंदुओं के बीच की न्यूनतम दूरी को विस्थापन कहते हैं।</p>
+  <div class="mini-table">
+    <tr><th>दूरी (Distance)</th><th>विस्थापन (Displacement)</th></tr>
+    <tr><td>रास्ते की लंबाई का बोध होती है</td><td>दो बिंदुओं के मध्य न्यूनतम दूरी</td></tr>
+    <tr><td>हमेशा धनात्मक (विरामावस्था में शून्य)</td><td>धनात्मक, ऋणात्मक या शून्य — तीनों हो सकता है</td></tr>
+    <tr><td>SI मात्रक — मीटर (m)</td><td>SI मात्रक — मीटर (m)</td></tr>
+    <tr><td>अदिश राशि</td><td>सदिश राशि</td></tr>
+    <tr><td>Path पर निर्भर</td><td>Path पर निर्भर नहीं</td></tr>
+  </div>
+  <div class="note-box">दूरी, विस्थापन से बड़ी होती है या उसके बराबर हो सकती है लेकिन छोटी कभी नहीं (d ≥ s)। विस्थापन धनात्मक, ऋणात्मक या शून्य कुछ भी हो सकता है।</div>
+  <p><b>उदाहरण:</b> पाँच सम्पूर्ण चक्कर के बाद (त्रिज्या 7m वाले वृत्ताकार पथ पर) चली गई दूरी = परिधि×5 = 2×(22/7)×7×5 = 220 m; विस्थापन = 0 (क्योंकि प्रारंभ व अंत बिंदु समान)।</p>
+
+  <h3>चाल (Speed)</h3>
+  <div class="formula-box">औसत चाल ⟨v⟩ = कुल दूरी / कुल समय; SI मात्रक — मीटर/सेकंड
+  km/hour को m/sec में बदलने के लिए 5/18 से गुणा करें</div>
+  <p>गाड़ियों का स्पीडोमीटर हमें क्षणिक चाल (Instantaneous Speed) के बारे में बताता है। गाड़ियों का odometer हमें गाड़ी द्वारा चली गई कुल दूरी के बारे में बताता है।</p>
+
+  <h3>अदिश और सदिश राशियाँ</h3>
+  <div class="mini-table">
+    <tr><th>अदिश राशि (Scalar)</th><th>सदिश राशि (Vector)</th></tr>
+    <tr><td>केवल परिमाण होता है</td><td>परिमाण तथा दिशा दोनों होते हैं</td></tr>
+    <tr><td>योग के अंकगणितीय नियम फॉलो करती हैं</td><td>योग के सदिश नियम फॉलो करती हैं</td></tr>
+    <tr><td>उदाहरण: दूरी, समय, द्रव्यमान, विद्युत धारा</td><td>उदाहरण: विस्थापन, वेग, त्वरण, बल</td></tr>
+  </div>
+
+  <h3>वेग (Velocity)</h3>
+  <ul>
+    <li>किसी वस्तु का वेग हमें उसकी चाल के साथ-साथ उसकी दिशा की भी जानकारी देता है।</li>
+    <li>यदि किसी वस्तु की चाल नियत हो तो उसका वेग नियत हो भी सकता है और नहीं भी।</li>
+    <li>यदि किसी वस्तु का वेग नियत हो तो वस्तु की चाल हमेशा नियत होगी।</li>
+  </ul>
+  <div class="formula-box">औसत वेग ⟨v⟩ = विस्थापन/समय; SI मात्रक — m/sec (सदिश राशि)</div>
+
+  <h3>त्वरण (Acceleration)</h3>
+  <ul>
+    <li>यदि किसी वस्तु की चाल नियत हो तब उसकी गति त्वरित गति भी हो सकती है और नहीं भी।</li>
+    <li>यदि किसी वस्तु का वेग नियत हो तो उसका त्वरण 100% शून्य होगा।</li>
+  </ul>
+  <div class="formula-box">त्वरण a = वेग परिवर्तन/समय = Δv/t; सदिश राशि, मात्रक — m/s²</div>
+  <p><b>नियत त्वरण (एक समान त्वरण):</b> उदाहरण — मुक्त रूप से गिरना (Free fall), a = g = 9.8 m/s²</p>
+
+  <h3>गति के समीकरण (Equations of Motion)</h3>
+  <p>u = प्रारंभिक वेग, v = अंतिम वेग, s = विस्थापन, a = नियत त्वरण, t = समय</p>
+  <div class="formula-box">
+  (i) v = u + at &nbsp;→ वेग-समय समीकरण<br>
+  (ii) s = ut + ½at² &nbsp;→ विस्थापन-समय समीकरण<br>
+  (iii) v² = u² + 2as &nbsp;→ वेग-विस्थापन समीकरण
+  </div>
+  `,
+  mcqs:[
+    {q:"दूरी और विस्थापन के बारे में निम्न में से कौन सा कथन सही है?",options:["विस्थापन दूरी से हमेशा बड़ा होता है","दूरी विस्थापन से बड़ी या उसके बराबर हो सकती है, छोटी कभी नहीं","दूरी हमेशा ऋणात्मक होती है","विस्थापन हमेशा धनात्मक होता है"],correct:1,exp:"दूरी हमेशा विस्थापन से बड़ी होती है या उसके बराबर हो सकती है (d ≥ s), लेकिन कभी छोटी नहीं होती।"},
+    {q:"विस्थापन के बारे में सही कथन है:",options:["यह हमेशा धनात्मक होता है", "यह धनात्मक, ऋणात्मक या शून्य कुछ भी हो सकता है", "यह हमेशा शून्य होता है", "यह हमेशा दूरी से बड़ा होता है"],correct:1,exp:"विस्थापन एक सदिश राशि है और यह धनात्मक, ऋणात्मक या शून्य — तीनों में से कुछ भी हो सकता है।"},
+    {q:"5 सम्पूर्ण चक्कर लगाने के बाद वृत्तीय पथ पर चलने वाली किसी वस्तु का विस्थापन कितना होगा?",options:["परिधि के बराबर","परिधि के पाँच गुना","शून्य","त्रिज्या के बराबर"],correct:2,exp:"पूर्ण चक्करों के बाद वस्तु अपने प्रारंभिक बिंदु पर वापस आ जाती है, इसलिए विस्थापन शून्य होता है, जबकि दूरी परिधि×5 होगी।"},
+    {q:"गाड़ी का स्पीडोमीटर हमें क्या बताता है?",options:["औसत चाल","क्षणिक चाल (Instantaneous Speed)","कुल दूरी","विस्थापन"],correct:1,exp:"स्पीडोमीटर किसी क्षण विशेष पर गाड़ी की चाल (क्षणिक चाल) दर्शाता है।"},
+    {q:"निम्न में से कौन सी राशि सदिश राशि है?",options:["दूरी","समय","विस्थापन","द्रव्यमान"],correct:2,exp:"विस्थापन एक सदिश राशि है क्योंकि इसमें परिमाण के साथ-साथ दिशा भी होती है; दूरी, समय, द्रव्यमान अदिश राशियाँ हैं।"},
+    {q:"यदि किसी वस्तु का वेग नियत हो, तो उसकी चाल कैसी होगी?",options:["परिवर्तनशील","हमेशा नियत होगी","शून्य होगी","अनंत होगी"],correct:1,exp:"यदि वेग नियत है (परिमाण व दिशा दोनों स्थिर), तो चाल (केवल परिमाण) भी हमेशा नियत होगी।"},
+    {q:"यदि किसी वस्तु का वेग नियत हो, तो उसका त्वरण होगा:",options:["अधिकतम","शून्य","ऋणात्मक","अनंत"],correct:1,exp:"नियत वेग का अर्थ है वेग में कोई परिवर्तन नहीं हो रहा, इसलिए त्वरण (वेग परिवर्तन की दर) शून्य होगा।"},
+    {q:"मुक्त रूप से गिरने वाली वस्तु (Free Fall) में त्वरण का मान होता है:",options:["0 m/s²","9.8 m/s²","सदैव बदलता रहता है","वस्तु के द्रव्यमान पर निर्भर करता है"],correct:1,exp:"मुक्त पतन में त्वरण गुरुत्वीय त्वरण g = 9.8 m/s² के बराबर होता है, जो नियत रहता है।"},
+    {q:"गति के समीकरण v² = u² + 2as में 's' क्या दर्शाता है?",options:["समय","वेग","त्वरण","विस्थापन"],correct:3,exp:"गति के तीसरे समीकरण v²=u²+2as में s विस्थापन को दर्शाता है।"},
+    {q:"km/hour को m/sec में बदलने के लिए किस संख्या से गुणा करते हैं?",options:["18/5","5/18","1000/3600","3600/1000 उल्टा"],correct:1,exp:"km/hour से m/sec में बदलने के लिए 5/18 से गुणा किया जाता है (चूँकि 1 km=1000m और 1 hour=3600 sec)।"}
+  ]
+},
+
+/* ---------------- CHAPTER 7: न्यूटन के गति के नियम ---------------- */
+{
+  id:7,
+  title:"न्यूटन के गति के नियम",
+  desc:"जड़त्व, संवेग, बल, आवेग, क्रिया-प्रतिक्रिया",
+  content:`
+  <h3>प्रथम नियम — जड़त्व का नियम (Law of Inertia)</h3>
+  <ul>
+    <li>किसी वस्तु का वह गुणधर्म जिसके कारण वस्तु अपनी विराम, गति या दिशा की अवस्था में परिवर्तन का विरोध करती है, जड़त्व कहलाता है।</li>
+    <li>यह नियम बल के गुण धर्म को बताता है।</li>
+    <li>किसी वस्तु के जड़त्व का मापन उसका द्रव्यमान है।</li>
+    <li>जड़त्व शब्द का सर्वप्रथम उपयोग गैलिलिओ ने किया था।</li>
+    <li>न्यूटन के पहले नियम को "law of Inertia" भी कहा जाता है।</li>
+  </ul>
+  <div class="mini-table">
+    <tr><th>विराम का जड़त्व</th><th>गति का जड़त्व</th><th>दिशा का जड़त्व</th></tr>
+    <tr><td>पेड़ से फलों का गिरना; धूल झाड़ने से धूल कणों का अलग होना; बस के अचानक चलने से यात्रियों का पीछे गिरना</td><td>चलती हुई ट्रेन से उल्टी दिशा में उतरना; चलती गाड़ी में अचानक ब्रेक लगाने पर आगे झुकना</td><td>चलती हुई बस के तीव्र मोड़ पर अचानक मुड़ने से यात्री की शरीर की बाहरी ओर झुकना</td></tr>
+  </div>
+
+  <h3>द्वितीय नियम — संवेग का नियम</h3>
+  <div class="formula-box">रैखिक संवेग: p = mv; SI मात्रक — kg-m/s (सदिश राशि); यदि वस्तु विरामावस्था में है (v=0) तो p=0</div>
+  <ul>
+    <li>यह नियम बल के मान के बारे में बताता है, इसे संवेग का नियम भी कहते हैं।</li>
+    <li>किसी वस्तु पर लगने वाला बाह्य बल रैखिक संवेग परिवर्तन की दर के समानुपाती होता है।</li>
+  </ul>
+  <div class="formula-box">F_बाह्य = ΔP/Δt = Δ(mv)/Δt = m(Δv/Δt) = ma   (द्रव्यमान नियत)
+  न्यूटन: 1N = 1 kg-m/s²</div>
+  <p>C.G.S प्रणाली में बल का मात्रक डाइन होता है — 1 dyne = 1 gm-cm/s²; 1 न्यूटन = 10⁵ dyne; 1 dyne = 10⁻⁵ न्यूटन।</p>
+  <div class="formula-box">आवेग (Impulse) I⃗ = F_ext·Δt = ΔP⃗ (जब बल बड़ा हो और Δt→0)
+  आवेग का SI मात्रक — Newton-sec</div>
+  <div class="imp-box">रैखिक संवेग संरक्षण के लिए किसी वस्तु पर बाह्य बलों का योग शून्य होना चाहिए।</div>
+
+  <h3>तृतीय नियम — क्रिया-प्रतिक्रिया का नियम</h3>
+  <ul>
+    <li>इसके अनुसार, बल हमेशा युग्म/जोड़ी में लगता है — इसे क्रिया-प्रतिक्रिया का नियम भी कहते हैं।</li>
+    <li>क्रिया तथा प्रतिक्रिया दो बराबर और विपरीत बल हैं जो कि अलग-अलग body पर लगते हैं, इसलिए एक दूसरे को निरस्त नहीं करेंगे।</li>
+    <li>क्रिया तथा प्रतिक्रिया एक साथ कार्य करती हैं; इनके बीच का समय अंतराल शून्य होता है।</li>
+  </ul>
+  <p><b>तृतीय नियम के उदाहरण:</b> नदियों में तैरना, रास्तों पर चलना, गोली के चलने के दौरान बंदूक का पीछे की ओर हटना, रॉकेट (Rocket)। ये सभी उदाहरण रैखिक संवेग संरक्षण के भी उदाहरण हैं।</p>
+  <div class="note-box">न्यूटन के गति के नियम केवल तभी वैध हैं जब वस्तु की चाल प्रकाश की चाल से अत्यंत कम हो।</div>
+
+  <h3>महत्वपूर्ण उदाहरण</h3>
+  <ul>
+    <li>स्वतंत्र रूप से गिरने वाले पिंड में 9.8 m/s² का नियत त्वरण होता है, इसका मतलब है कि प्रत्येक सेकंड के दौरान वस्तु की गति 9.8 m/s बढ़ जाती है।</li>
+    <li>किसी वस्तु को उर्ध्वाधर ऊपर फेंका जाता है, जब वह ऊपर की ओर बढ़ रही है — वेग ऊपर की ओर, त्वरण (गुरुत्वीय) नीचे की ओर।</li>
+    <li>एक पिंड की जड़ता पिंड में स्वयं की गति में परिवर्तन का विरोध करने का गुण उत्पन्न करती है।</li>
+    <li>बल एक बाह्य अभिकरण है जिसे किसी निकाय पर प्रयुक्त करने से निकाय की विराम अवस्था या समान चाल में परिवर्तन होता है।</li>
+  </ul>
+  `,
+  mcqs:[
+    {q:"न्यूटन के पहले नियम को कहा जाता है:",options:["law of moments","law of Inertia","law of Energy","law of momentum"],correct:1,exp:"न्यूटन के प्रथम नियम को जड़त्व का नियम (Law of Inertia) कहा जाता है।"},
+    {q:"जड़त्व शब्द का सर्वप्रथम उपयोग किसने किया था?",options:["न्यूटन","गैलिलियो","आइंस्टीन","केप्लर"],correct:1,exp:"जड़त्व (Inertia) शब्द का सर्वप्रथम उपयोग गैलिलियो ने किया था।"},
+    {q:"किसी वस्तु के जड़त्व का मापन क्या है?",options:["उसका वेग","उसका द्रव्यमान","उसका भार","उसका आयतन"],correct:1,exp:"किसी वस्तु का द्रव्यमान ही उसके जड़त्व का मापन है — अधिक द्रव्यमान का अर्थ है अधिक जड़त्व।"},
+    {q:"चलती हुई ट्रेन से उल्टी दिशा में उतरने पर यात्री गिर जाता है — यह किस जड़त्व का उदाहरण है?",options:["विराम का जड़त्व","गति का जड़त्व","दिशा का जड़त्व","इनमें से कोई नहीं"],correct:1,exp:"चलती ट्रेन से उतरने वाले व्यक्ति के शरीर में गति बनी रहती है (गति का जड़त्व), इसलिए वह आगे की ओर गिर जाता है।"},
+    {q:"किसी बस के अचानक मुड़ने से यात्री शरीर की बाहरी ओर झुक जाता है — यह किस जड़त्व का उदाहरण है?",options:["विराम का जड़त्व","गति का जड़त्व","दिशा का जड़त्व","इनमें से कोई नहीं"],correct:2,exp:"यह दिशा के जड़त्व (Inertia of Direction) का उदाहरण है — शरीर अपनी सीधी दिशा में चलते रहने की प्रवृत्ति रखता है।"},
+    {q:"यदि 0.1 kg की वस्तु पर 10N का बल लगाया जाए तो उसमें कितना त्वरण उत्पन्न होगा?",options:["1 m/s²","10 m/s²","100 m/s²","1000 m/s²"],correct:2,exp:"a = F/m = 10/0.1 = 100 m/s²।"},
+    {q:"न्यूटन के गति का तीसरा नियम कहलाता है:",options:["जड़त्व का नियम","संवेग का नियम","क्रिया-प्रतिक्रिया का नियम","ऊर्जा संरक्षण का नियम"],correct:2,exp:"न्यूटन का तृतीय नियम क्रिया-प्रतिक्रिया का नियम कहलाता है — हर क्रिया के बराबर व विपरीत प्रतिक्रिया होती है।"},
+    {q:"रॉकेट का ऊपर उठना किस नियम का उदाहरण है?",options:["न्यूटन का पहला नियम","न्यूटन का दूसरा नियम","न्यूटन का तीसरा नियम","केप्लर का नियम"],correct:2,exp:"रॉकेट गैसों को पीछे की ओर बाहर निकालता है (क्रिया) और उसकी प्रतिक्रिया स्वरूप रॉकेट आगे बढ़ता है — यह न्यूटन के तृतीय नियम का उदाहरण है।"},
+    {q:"CGS प्रणाली में बल का मात्रक है:",options:["न्यूटन","डाइन (dyne)","जूल","वाट"],correct:1,exp:"CGS प्रणाली में बल का मात्रक डाइन है; 1 न्यूटन = 10⁵ डाइन।"},
+    {q:"आवेग (Impulse) का SI मात्रक है:",options:["Newton-sec","Newton-meter","Joule-sec","kg-m/s²"],correct:0,exp:"आवेग I = F×Δt = ΔP, इसका SI मात्रक न्यूटन-सेकंड है।"}
+  ]
+},
+
+/* ---------------- CHAPTER 8: गुरुत्वाकर्षण (Gravitation) ---------------- */
+{
+  id:8,
+  title:"गुरुत्वाकर्षण (Gravitation)",
+  desc:"न्यूटन का सार्वत्रिक नियम, गुरुत्वीय त्वरण, भार",
+  content:`
+  <h3>न्यूटन का गुरुत्वाकर्षण का सार्वत्रिक नियम</h3>
+  <div class="formula-box">F ∝ m₁·m₂ और F ∝ 1/r² ⇒ F = Gm₁m₂/r²
+  G = सार्वत्रिक गुरुत्वाकर्षण नियतांक = 6.67×10⁻¹¹ N-m²/kg²</div>
+  <p>यह सूत्र केवल बिंदु द्रव्यमानों के लिए वैध है; गोलाकार वस्तु पर भी लागू होता है यदि बीच की दूरी अधिक हो। G का मान Henry Cavendish द्वारा ज्ञात किया गया था।</p>
+  <ul>
+    <li>यदि पृथ्वी चाँद पर A बल लगाती है और चाँद पृथ्वी पर B बल लगाता है, तो न्यूटन के तृतीय नियम के अनुसार A = B (बराबर और विपरीत)।</li>
+    <li>न्यूटन का गुरुत्वाकर्षण का नियम न्यूटन के गति के तृतीय नियम का अनुसरण करता है।</li>
+    <li>गुरुत्वाकर्षण बल सभी दूरियों के लिए वैध है (छोटी तथा बड़ी दोनों)।</li>
+    <li>गुरुत्वाकर्षण बल दुर्बल तथा आकर्षित बल होते हैं।</li>
+  </ul>
+
+  <h3>गुरुत्वीय त्वरण (g)</h3>
+  <div class="formula-box">g_पृथ्वी = 9.8 m/s²;  g_चाँद = g_पृथ्वी/6;  g_बृहस्पति = 25 m/s²</div>
+  <p>निर्वात में समान ऊँचाई से गिराई गई दो वस्तुएँ समान समय पर जमीन से आ कर टकराती हैं, चाहे उनके द्रव्यमान कुछ भी हों।</p>
+  <p><b>पृथ्वी तल से ऊपर-नीचे जाने पर g के मान में परिवर्तन:</b> पृथ्वी की सतह पर g=9.8 m/s² अधिकतम; ऊपर जाने पर g घटता है और भार (W) भी घटता है; नीचे (गहराई में) जाने पर भी g घटता है और भार घटता है; पृथ्वी के केंद्र पर g=0, भार (Weight)=0। किसी वस्तु का द्रव्यमान हमेशा नियत रहता है, केवल वस्तु का भार परिवर्तित होता है (Weight, W=mg; SI मात्रक — न्यूटन)।</p>
+
+  <h3>पृथ्वी के आकार के कारण g के मान में भिन्नता</h3>
+  <p>पृथ्वी की विषुवत रेखा से त्रिज्या (rₑ), ध्रुव से त्रिज्या (rₚ) से बड़ी होती है (rₑ > rₚ ≈ 21 km अधिक)।</p>
+  <ul>
+    <li>ध्रुवों पर — g अधिकतम, W अधिकतम (क्योंकि पृथ्वी के केंद्र से दूरी कम)</li>
+    <li>विषुवत रेखा पर — g न्यूनतम, W न्यूनतम</li>
+    <li>यदि कोई व्यक्ति विषुवत रेखा से ध्रुव तक जाता है तो g का मान बढ़ने से उसका वजन बढ़ा हुआ महसूस होगा।</li>
+  </ul>
+  <p><b>पृथ्वी की घूर्णन गति के कारण g में परिवर्तन:</b> यदि पृथ्वी अपने अक्ष के परित: घूर्णन गति करना बंद कर दे तो g का मान ध्रुवों को छोड़कर हर जगह पर थोड़ा-थोड़ा बढ़ जाएगा।</p>
+
+  <h3>लिफ्ट (Lift) में भार में परिवर्तन</h3>
+  <ul>
+    <li>लिफ्ट ऊपर की ओर त्वरण से गतिमान — भार (Weight) बढ़ेगा।</li>
+    <li>लिफ्ट नीचे की ओर त्वरण से गतिमान — भार घटेगा।</li>
+    <li>तार टूटने पर (मुक्त रूप से गिरना) — भार शून्य (Weight = 0), भारहीनता की अवस्था।</li>
+    <li>लिफ्ट के मामले में भी भार में कोई अंतर नहीं आएगा यदि लिफ्ट का वेग शून्य, समान (constant) हो या निश्चित हो (अर्थात् त्वरण शून्य हो)।</li>
+  </ul>
+  `,
+  mcqs:[
+    {q:"न्यूटन के गुरुत्वाकर्षण के सार्वत्रिक नियम के अनुसार, दो पिंडों के बीच बल F और उनके बीच की दूरी r में संबंध है:",options:["F ∝ r²","F ∝ 1/r²","F ∝ r","F ∝ 1/r"],correct:1,exp:"न्यूटन का नियम: F ∝ m₁m₂/r², अर्थात् बल दूरी के वर्ग के व्युत्क्रमानुपाती होता है।"},
+    {q:"सार्वत्रिक गुरुत्वाकर्षण नियतांक G का मान किसके द्वारा ज्ञात किया गया था?",options:["न्यूटन","हेनरी कैवेंडिश (Henry Cavendish)","केप्लर","गैलिलियो"],correct:1,exp:"G का मान (6.67×10⁻¹¹ N-m²/kg²) हेनरी कैवेंडिश द्वारा प्रायोगिक रूप से ज्ञात किया गया था।"},
+    {q:"यदि पृथ्वी चाँद पर A बल लगाती है और चाँद पृथ्वी पर B बल लगाता है, तो सही संबंध है:",options:["A > B","A < B","A = B","कुछ नहीं कह सकते"],correct:2,exp:"न्यूटन के तृतीय नियम के अनुसार क्रिया और प्रतिक्रिया बराबर व विपरीत होती हैं, इसलिए A = B।"},
+    {q:"चाँद पर गुरुत्वीय त्वरण पृथ्वी के गुरुत्वीय त्वरण का लगभग कितना भाग है?",options:["1/2","1/4","1/6","1/10"],correct:2,exp:"g_चाँद = g_पृथ्वी/6 ≈ 1.63 m/s²।"},
+    {q:"पृथ्वी के केंद्र पर गुरुत्वीय त्वरण (g) और किसी वस्तु का भार (Weight) होता है:",options:["g=9.8, W=अधिकतम","g=0, W=0","g=अनंत, W=अनंत","g=0, W=अधिकतम"],correct:1,exp:"पृथ्वी के केंद्र पर g=0 होता है, इसलिए वहाँ भार (W=mg) भी शून्य हो जाता है — यह भारहीनता की अवस्था है।"},
+    {q:"पृथ्वी की विषुवत रेखा से त्रिज्या और ध्रुव से त्रिज्या के बारे में सही कथन है:",options:["दोनों बराबर हैं","विषुवत रेखा से त्रिज्या ध्रुव से त्रिज्या से बड़ी है","ध्रुव से त्रिज्या विषुवत रेखा से त्रिज्या से बड़ी है","इनकी तुलना संभव नहीं"],correct:1,exp:"पृथ्वी थोड़ी चपटी है, इसलिए विषुवत रेखा से त्रिज्या (rₑ), ध्रुव से त्रिज्या (rₚ) से लगभग 21 km बड़ी होती है।"},
+    {q:"ध्रुवों पर g का मान विषुवत रेखा की तुलना में कैसा होता है?",options:["ध्रुवों पर g अधिकतम होता है","विषुवत रेखा पर g अधिकतम होता है","दोनों जगह समान होता है","ध्रुवों पर g ऋणात्मक होता है"],correct:0,exp:"ध्रुवों की पृथ्वी केंद्र से दूरी कम होने के कारण वहाँ g का मान अधिकतम होता है।"},
+    {q:"यदि कोई व्यक्ति विषुवत रेखा से ध्रुव तक जाता है, तो उसका वजन कैसा महसूस होगा?",options:["घटा हुआ","बढ़ा हुआ","अपरिवर्तित","शून्य"],correct:1,exp:"g का मान विषुवत रेखा से ध्रुव तक जाने पर बढ़ता है, इसलिए वजन भी बढ़ा हुआ महसूस होगा।"},
+    {q:"एक लिफ्ट ऊपर की ओर त्वरण से गतिमान है, तो लिफ्ट में खड़े व्यक्ति का भार:",options:["घटेगा","बढ़ेगा","शून्य हो जाएगा","अपरिवर्तित रहेगा"],correct:1,exp:"जब लिफ्ट ऊपर की ओर त्वरित होती है, तो व्यक्ति का आभासी भार बढ़ जाता है।"},
+    {q:"यदि लिफ्ट की तार टूट जाए (लिफ्ट मुक्त रूप से गिरने लगे), तो लिफ्ट में खड़े व्यक्ति का भार होगा:",options:["अधिकतम","सामान्य के बराबर","शून्य (भारहीनता)","दोगुना"],correct:2,exp:"मुक्त पतन की स्थिति में व्यक्ति व लिफ्ट दोनों समान त्वरण g से गिरते हैं, इसलिए आभासी भार शून्य हो जाता है — यह भारहीनता की अवस्था है।"}
+  ]
+},
+
+/* ---------------- CHAPTER 9: प्रक्षेप्य गति (Projectile Motion) ---------------- */
+{
+  id:9,
+  title:"प्रक्षेप्य गति (Projectile Motion)",
+  desc:"क्षैतिज परास, अधिकतम ऊँचाई, प्रक्षेप्य का पथ",
+  content:`
+  <h3>प्रक्षेप्य गति की मूल बातें</h3>
+  <ul>
+    <li>प्रक्षेप्य (Projectile) का पथ परवलयाकार (Parabolic) होता है।</li>
+    <li>जब किसी वस्तु को u चाल से θ कोण पर फेंका जाता है, तो अधिकतम ऊँचाई पर इसकी चाल u cosθ हो जाती है (केवल क्षैतिज घटक शेष रहता है)।</li>
+    <li>कोई भी वस्तु समान चाल और समान कोण पर जमीन से आकर टकराती है, जिस पर उसे फेंका गया था (वायु प्रतिरोध न हो तो)।</li>
+    <li>ऊपर जाने का समय (T₁) = वस्तु को नीचे आने में लगा समय (T₂), अर्थात् T₁ = T₂</li>
+  </ul>
+
+  <h3>महत्वपूर्ण सूत्र</h3>
+  <div class="formula-box">अधिकतम क्षैतिज परास के लिए: θ = 45°
+  अधिकतम ऊँचाई के लिए: θ = 90° (केवल ऊर्ध्वाधर प्रक्षेप्य)</div>
+  <div class="formula-box">क्षैतिज परास R = u²sin2θ/g
+  अधिकतम ऊँचाई H = u²sin²θ/2g
+  परास (R) व अधिकतम ऊँचाई (H) में संबंध: H/R = tanθ/4</div>
+  <p><b>उदाहरण:</b> किस कोण पर वस्तु फेंकी जाए जिससे परास व ऊँचाई समान हों? R=H रखने पर H/R=tanθ/4 से 1=tanθ/4, tanθ=4, θ=tan⁻¹(4) ≈ 76°</p>
+  <p><b>उदाहरण:</b> यदि R = 4H, तो H/(4H)=tanθ/4 से tanθ=1, θ=45°।</p>
+
+  <h3>पूरक कोण (Complementary Angles)</h3>
+  <p>कोण θ और (90°−θ) के लिए क्षैतिज परास समान रहती है।</p>
+  <div class="formula-box">R(θ) = u²sin(2θ)/g;  R(90°−θ) = u²sin(180°−2θ)/g = u²sin(2θ)/g (समान)</div>
+  <p>अर्थात् यदि दो कोणों का योग 90° हो, तो इन दोनों कोणों के लिए क्षैतिज परास का मान समान होगा। उदाहरण: 30° व 60° के लिए परास समान होगी; 20° व 70° के लिए भी समान होगी।</p>
+
+  <h3>प्रक्षेप्य गति के घटक</h3>
+  <p>यदि u चाल से θ कोण पर फेंका जाए, तो: क्षैतिज घटक = u cosθ (पूरे प्रक्षेप्य पथ में नियत रहता है); ऊर्ध्वाधर घटक = u sinθ (ऊपर जाते समय घटता है, नीचे आते समय बढ़ता है, गुरुत्वीय त्वरण g के कारण)।</p>
+  `,
+  mcqs:[
+    {q:"प्रक्षेप्य (Projectile) का पथ किस आकार का होता है?",options:["वृत्ताकार","सरल रेखीय","परवलयाकार","दीर्घवृत्ताकार"],correct:2,exp:"प्रक्षेप्य गति में वस्तु का पथ हमेशा परवलयाकार (Parabolic) होता है।"},
+    {q:"अधिकतम क्षैतिज परास प्राप्त करने के लिए वस्तु को किस कोण पर फेंकना चाहिए?",options:["30°","45°","60°","90°"],correct:1,exp:"क्षैतिज परास R = u²sin(2θ)/g अधिकतम तब होगा जब sin(2θ) अधिकतम अर्थात् 2θ=90°, θ=45°।"},
+    {q:"अधिकतम ऊँचाई प्राप्त करने के लिए वस्तु को किस कोण पर फेंकना चाहिए?",options:["0°","45°","60°","90°"],correct:3,exp:"अधिकतम ऊँचाई के लिए θ=90° होना चाहिए, अर्थात् वस्तु को सीधा ऊपर की ओर फेंका जाए।"},
+    {q:"जब किसी वस्तु को u चाल से θ कोण पर फेंका जाता है, तो अधिकतम ऊँचाई पर इसकी चाल हो जाती है:",options:["u","u sinθ","u cosθ","शून्य"],correct:2,exp:"अधिकतम ऊँचाई पर ऊर्ध्वाधर घटक (u sinθ) शून्य हो जाता है, केवल क्षैतिज घटक u cosθ शेष रहता है।"},
+    {q:"किसी प्रक्षेप्य के ऊपर जाने में लगा समय (T₁) और नीचे आने में लगा समय (T₂) के बीच संबंध है:",options:["T₁ > T₂","T₁ < T₂","T₁ = T₂","इनमें से कोई नहीं"],correct:2,exp:"आदर्श परिस्थितियों (वायु प्रतिरोध रहित) में ऊपर जाने और नीचे आने में समान समय लगता है, T₁=T₂।"},
+    {q:"H/R = tanθ/4 सूत्र में R और H क्रमशः दर्शाते हैं:",options:["ऊँचाई और परास","परास और ऊँचाई","समय और वेग","वेग और त्वरण"],correct:1,exp:"इस सूत्र में R क्षैतिज परास और H अधिकतम ऊँचाई को दर्शाता है।"},
+    {q:"एक वस्तु को किस कोण पर फेंका जाए जिससे उसकी परास व अधिकतम ऊँचाई समान हों?",options:["45°","60°","tan⁻¹(4) ≈ 76°","30°"],correct:2,exp:"R=H रखने पर H/R=tanθ/4 से tanθ=4, θ=tan⁻¹(4) ≈ 76°।"},
+    {q:"यदि R = 4H हो, तो प्रक्षेप्य कोण θ का मान होगा:",options:["30°","45°","60°","90°"],correct:1,exp:"H/R=tanθ/4 में R=4H रखने पर H/4H=tanθ/4, अर्थात् tanθ=1, θ=45°।"},
+    {q:"दो कोणों 30° और 60° के लिए फेंकी गई किसी वस्तु की क्षैतिज परास होगी:",options:["अलग-अलग","समान","पहले से अधिक","शून्य"],correct:1,exp:"चूँकि 30°+60°=90° (पूरक कोण), दोनों कोणों के लिए क्षैतिज परास समान रहती है।"},
+    {q:"प्रक्षेप्य गति में क्षैतिज घटक (u cosθ) पूरे पथ में कैसा रहता है?",options:["बढ़ता जाता है","घटता जाता है","नियत रहता है","शून्य हो जाता है"],correct:2,exp:"क्षैतिज दिशा में कोई त्वरण कार्य नहीं करता (गुरुत्व केवल ऊर्ध्वाधर दिशा में कार्य करता है), इसलिए क्षैतिज घटक पूरे पथ में नियत रहता है।"}
+  ]
+},
+
+/* ---------------- CHAPTER 10: कार्य, शक्ति और ऊर्जा ---------------- */
+{
+  id:10,
+  title:"कार्य, शक्ति और ऊर्जा",
+  desc:"कार्य की गणना, यांत्रिक व विद्युत शक्ति, गतिज व स्थितिज ऊर्जा",
+  content:`
+  <h3>कार्य (WORK)</h3>
+  <ul>
+    <li>कार्य, बल और विस्थापन का अदिश गुणन है।</li>
+    <li>यह एक अदिश राशि है जिसका मात्रक जूल या न्यूटन-मीटर होता है (1 जूल = 1 न्यूटन-मीटर)।</li>
+  </ul>
+  <div class="formula-box">W = F⃗·S⃗ = FS cosθ, जहाँ θ = बल तथा विस्थापन के बीच का कोण</div>
+  <p><b>उदाहरण 1:</b> यदि θ=0° (बल व विस्थापन समदिशिक), F=20N, S=20m → W = 20×20×cos0° = 400 जूल।</p>
+  <p><b>उदाहरण 2:</b> यदि θ=60°, F=20N, S=20m → W = 20×20×cos60° = 400×½ = 200 जूल।</p>
+  <p><b>उदाहरण:</b> कुली द्वारा किए गए कार्य की गणना करें यदि वह 10 kg के बैग को 1 मीटर ऊपर उठाकर अपने सिर पर रखता है — W = mgh cos0° = 10×10×1 = 100 जूल (W = +mgh, गुरुत्व के विरुद्ध किए कार्य के लिए W_gravity = −mgh)।</p>
+  <div class="note-box">यदि कोई कुली सिर पर रखे x किग्रा के बैग को y दूरी तक क्षैतिज रूप से ले जाता है, तो उसके द्वारा किया गया कार्य शून्य होगा (θ=90° के कारण, cos90°=0, अतः W=0), क्योंकि बल (ऊर्ध्वाधर) व विस्थापन (क्षैतिज) एक-दूसरे के लंबवत हैं।</div>
+  <p><b>धनात्मक व ऋणात्मक कार्य:</b> दरवाजे को धकेलते हुए (θ=0° के करीब) किया गया कार्य धनात्मक होता है; दरवाजे को खींचते हुए किया गया कार्य भी दिशा पर निर्भर करता है — बल व विस्थापन की दिशा एक हो तो धनात्मक, विपरीत हो तो ऋणात्मक कार्य होता है।</p>
+
+  <h3>यांत्रिक शक्ति (Power)</h3>
+  <div class="formula-box">P = W/t; SI मात्रक — वाट (1 वाट = 1 जूल/सेकंड); 1 अश्वशक्ति (HP) = 746 वाट</div>
+  <p>शक्ति एक अदिश राशि है।</p>
+
+  <h3>ऊर्जा (Energy)</h3>
+  <p>किसी वस्तु की कार्य करने की सामर्थ्य उसकी ऊर्जा कहलाती है। यह एक अदिश राशि है; SI मात्रक — जूल।</p>
+
+  <h3>गतिज ऊर्जा (Kinetic Energy)</h3>
+  <div class="formula-box">K = ½mv²  =  P²/2m  (जहाँ P = mv, रैखिक संवेग)</div>
+  <p><b>उदाहरण:</b> एक हल्की एवं एक भारी वस्तु का संवेग एक समान है, तो किसकी गतिज ऊर्जा अधिक होगी? चूँकि K=P²/2m और P नियत है, K ∝ 1/m — अतः हल्की वस्तु की गतिज ऊर्जा अधिक होगी।</p>
+  <p><b>Case 1:</b> यदि द्रव्यमान व चाल दोनों पहले से दोगुना कर दें: K₁=½mv²; K₂=½(2m)(2v)²=8×(½mv²) ⇒ K₂ = 8K₁।</p>
+  <p><b>Case 2:</b> यदि द्रव्यमान आधा और चाल चार गुना कर दें: K₂=½×(m/2)×(4v)² = 16×(½)×(½mv²) = 8×(½mv²) ⇒ K₂ = 8K₁ (यहाँ भी 8 गुना)।</p>
+
+  <h3>स्थितिज ऊर्जा (Potential Energy)</h3>
+  <p>किसी वस्तु की स्थिति और विन्यास से अर्जित ऊर्जा स्थितिज ऊर्जा कहलाती है।</p>
+  <div class="formula-box">गुरुत्वीय स्थितिज ऊर्जा: U = mgh
+  स्प्रिंग की स्थितिज ऊर्जा: U = ½kx², जहाँ k = स्प्रिंग नियतांक (मात्रक — न्यूटन-मीटर)</div>
+  <p><b>यांत्रिक ऊर्जा:</b> यांत्रिक ऊर्जा = गतिज ऊर्जा + स्थितिज ऊर्जा</p>
+  <div class="note-box">जब किसी वस्तु को उर्ध्वाधर ऊपर की तरफ फेंका जाता है या नीचे की ओर छोड़ा जाता है, तो हर बिंदु पर गतिज ऊर्जा तथा स्थितिज ऊर्जा का योग नियत रहता है (ऊर्जा संरक्षण का नियम)।</div>
+  <p>स्थितिज ऊर्जा को जूल, न्यूटन-मीटर या वाट-सेकंड में व्यक्त किया जा सकता है, न्यूटन-सेकंड में नहीं (वह आवेग का मात्रक है)।</p>
+  `,
+  mcqs:[
+    {q:"कार्य W = F⃗·S⃗ = FS cosθ में θ किसके बीच का कोण है?",options:["बल और समय","बल और विस्थापन","विस्थापन और समय","द्रव्यमान और वेग"],correct:1,exp:"कार्य के सूत्र में θ बल (F) और विस्थापन (S) के बीच का कोण होता है।"},
+    {q:"यदि कोई कुली सिर पर रखे x किग्रा के बैग को y दूरी तक क्षैतिज (horizontal) रूप से ले जाता है, तो उसके द्वारा किया गया कार्य होगा:",options:["mgy","शून्य","mg","xy"],correct:1,exp:"बल (ऊर्ध्वाधर, mg) और विस्थापन (क्षैतिज, y) के बीच θ=90° है, cos90°=0, इसलिए कार्य शून्य होगा।"},
+    {q:"किसी स्थिर वस्तु पर लगाए गए बल F की दिशा और विस्थापन की दिशा के बीच का कोण 60° है। यदि F=20N और S=20m हो, तो किया गया कार्य होगा:",options:["400 जूल","300 जूल","200 जूल","100 जूल"],correct:2,exp:"W=FScosθ = 20×20×cos60° = 400×0.5 = 200 जूल।"},
+    {q:"1 अश्वशक्ति (Horse Power) कितने वाट के बराबर होती है?",options:["100 वाट","550 वाट","746 वाट","1000 वाट"],correct:2,exp:"1 अश्वशक्ति (HP) = 746 वाट होती है।"},
+    {q:"गतिज ऊर्जा K = P²/2m के अनुसार, यदि दो वस्तुओं (एक हल्की, एक भारी) का संवेग समान है, तो किसकी गतिज ऊर्जा अधिक होगी?",options:["हल्की वस्तु की","भारी वस्तु की","दोनों की समान","इनमें से कोई नहीं"],correct:0,exp:"K=P²/2m में P नियत होने पर K ∝ 1/m, अतः द्रव्यमान कम (हल्की वस्तु) होने पर गतिज ऊर्जा अधिक होगी।"},
+    {q:"यदि किसी वस्तु का द्रव्यमान तथा चाल दोनों पहले से दोगुना कर दें, तो उसकी गतिज ऊर्जा कितने गुना हो जाएगी?",options:["2 गुना","4 गुना","8 गुना","16 गुना"],correct:2,exp:"K₂=½(2m)(2v)²=8×(½mv²)=8K₁, अर्थात् गतिज ऊर्जा 8 गुना हो जाएगी।"},
+    {q:"स्प्रिंग की स्थितिज ऊर्जा का सूत्र है:",options:["mgh","½mv²","½kx²","P²/2m"],correct:2,exp:"स्प्रिंग की स्थितिज ऊर्जा U=½kx² होती है, जहाँ k स्प्रिंग नियतांक और x विस्थापन है।"},
+    {q:"स्थितिज ऊर्जा को किस मात्रक में व्यक्त नहीं किया जा सकता?",options:["जूल","न्यूटन-मीटर","न्यूटन-सेकंड","वाट-सेकंड"],correct:2,exp:"जूल, न्यूटन-मीटर और वाट-सेकंड ऊर्जा के समतुल्य मात्रक हैं, जबकि न्यूटन-सेकंड आवेग (Impulse) का मात्रक है, ऊर्जा का नहीं।"},
+    {q:"किसी वस्तु को ऊर्ध्वाधर ऊपर फेंकने पर हर बिंदु पर गतिज ऊर्जा व स्थितिज ऊर्जा का योग होता है:",options:["शून्य","नियत (constant)","लगातार बढ़ता है","लगातार घटता है"],correct:1,exp:"ऊर्जा संरक्षण के नियम के अनुसार, हर बिंदु पर गतिज ऊर्जा व स्थितिज ऊर्जा का कुल योग (यांत्रिक ऊर्जा) नियत रहता है।"},
+    {q:"शक्ति (Power) की SI मात्रक है:",options:["जूल","वाट","न्यूटन","पास्कल"],correct:1,exp:"शक्ति का SI मात्रक वाट है, जहाँ 1 वाट = 1 जूल/सेकंड।"}
+  ]
+},
+
+/* ---------------- CHAPTER 11: उपग्रह (Satellite) ---------------- */
+{
+  id:11,
+  title:"उपग्रह (Satellite)",
+  desc:"कक्षीय चाल, पलायन वेग, भू-स्थिर व ध्रुवीय उपग्रह",
+  content:`
+  <h3>कक्षीय चाल (Orbital Speed)</h3>
+  <p>किसी वस्तु को किसी कक्षा (orbit) में स्थापित करने के लिए आवश्यक चाल को उस वस्तु की कक्षीय चाल (V₀) कहते हैं।</p>
+  <div class="formula-box">V₀ = √(GM/(R+h))
+  M = ग्रह का द्रव्यमान, R = ग्रह की त्रिज्या, h = ऊँचाई
+  यदि h≈0, तब V₀ = 7.9 km/sec
+  यदि h↑, तब V₀↓ (ऊँचाई बढ़ने पर कक्षीय चाल घटती है)</div>
+
+  <h3>पलायन वेग (Escape Velocity)</h3>
+  <p>वह वेग जिस पर कोई वस्तु किसी ग्रह के गुरुत्वाकर्षण से बाहर निकल जाए तथा कभी लौट कर न आए, पलायन वेग (Vₑ) कहलाता है।</p>
+  <div class="formula-box">Vₑ = V₀×√2 = √(2GM/(R+h))
+  यदि h≈0, तब Vₑ = 11.2 km/sec
+  यदि h↑, तब Vₑ↓</div>
+  <p>कक्षीय चाल और पलायन वेग का मान वस्तु के द्रव्यमान पर निर्भर नहीं करता।</p>
+
+  <h3>पृथ्वी पर वायुमंडल के होने के कारण</h3>
+  <ul>
+    <li>पृथ्वी का गुरुत्वाकर्षण बल</li>
+    <li>उच्च पलायन वेग</li>
+  </ul>
+
+  <h3>भू-स्थिर उपग्रह बनाम ध्रुवीय उपग्रह</h3>
+  <div class="mini-table">
+    <tr><th>भू-स्थिर उपग्रह</th><th>ध्रुवीय उपग्रह</th></tr>
+    <tr><td>पश्चिम से पूर्व की ओर घूमते हैं</td><td>ध्रुवों के चारों ओर घूमते हैं</td></tr>
+    <tr><td>आवर्तकाल T = 24 घंटे</td><td>आवर्तकाल T = 84.6 मिनट</td></tr>
+    <tr><td>पृथ्वी सतह से ऊँचाई ≈ 36,000 km (35,786 km)</td><td>—</td></tr>
+    <tr><td>यह पूरी पृथ्वी को स्कैन नहीं कर सकता</td><td>एक साथ पूरी पृथ्वी को स्कैन कर सकते हैं</td></tr>
+    <tr><td>दूरसंचार में उपयोगी उपग्रह</td><td>Mapping व जासूसी में उपयोग</td></tr>
+  </div>
+  `,
+  mcqs:[
+    {q:"पृथ्वी की सतह के पास (h≈0) कक्षीय चाल (Orbital Speed) का मान लगभग कितना होता है?",options:["7.9 km/sec","11.2 km/sec","3×10⁵ km/sec","9.8 km/sec"],correct:0,exp:"h≈0 पर कक्षीय चाल V₀ = 7.9 km/sec होती है।"},
+    {q:"पृथ्वी के पास (h≈0) पलायन वेग (Escape Velocity) का मान लगभग कितना होता है?",options:["7.9 km/sec","11.2 km/sec","5.6 km/sec","1.6 km/sec"],correct:1,exp:"h≈0 पर पलायन वेग Vₑ = 11.2 km/sec होता है।"},
+    {q:"पलायन वेग और कक्षीय चाल के बीच संबंध है:",options:["Vₑ = V₀","Vₑ = V₀×√2","Vₑ = V₀/√2","Vₑ = V₀²"],correct:1,exp:"Vₑ = V₀×√2, अर्थात् पलायन वेग कक्षीय चाल का √2 गुना होता है।"},
+    {q:"ऊँचाई (h) बढ़ने पर कक्षीय चाल (V₀) का क्या होता है?",options:["बढ़ती है","घटती है","अपरिवर्तित रहती है","शून्य हो जाती है"],correct:1,exp:"V₀ = √(GM/(R+h)) के अनुसार, h बढ़ने पर हर का मान बढ़ता है, इसलिए V₀ घटती है।"},
+    {q:"कक्षीय चाल तथा पलायन वेग का मान किस पर निर्भर करता है?",options:["वस्तु के द्रव्यमान पर","केवल ग्रह के द्रव्यमान व ऊँचाई पर","वस्तु के आकार पर","वस्तु के रंग पर"],correct:1,exp:"कक्षीय चाल व पलायन वेग दोनों वस्तु (उपग्रह) के द्रव्यमान पर निर्भर नहीं करते, ये केवल ग्रह के द्रव्यमान (M) और ऊँचाई (h) पर निर्भर करते हैं।"},
+    {q:"पृथ्वी पर वायुमंडल के होने का कारण है:",options:["केवल पृथ्वी का गुरुत्वाकर्षण बल","केवल उच्च पलायन वेग","पृथ्वी का गुरुत्वाकर्षण बल व उच्च पलायन वेग दोनों","इनमें से कोई नहीं"],correct:2,exp:"पृथ्वी पर वायुमंडल पृथ्वी के गुरुत्वाकर्षण बल तथा उसके उच्च पलायन वेग दोनों के कारण बना रहता है।"},
+    {q:"भू-स्थिर उपग्रह (Geostationary Satellite) की पृथ्वी सतह से ऊँचाई लगभग कितनी होती है?",options:["800 km","2000 km","36,000 km","1,00,000 km"],correct:2,exp:"भू-स्थिर उपग्रह की ऊँचाई लगभग 35,786 km (≈36,000 km) होती है।"},
+    {q:"ध्रुवीय उपग्रह (Polar Satellite) का आवर्तकाल लगभग कितना होता है?",options:["24 घंटे","84.6 मिनट","1 वर्ष","1 महीना"],correct:1,exp:"ध्रुवीय उपग्रह का आवर्तकाल लगभग 84.6 मिनट होता है, जबकि भू-स्थिर उपग्रह का आवर्तकाल 24 घंटे होता है।"},
+    {q:"कौन सा उपग्रह एक साथ पूरी पृथ्वी को स्कैन कर सकता है?",options:["भू-स्थिर उपग्रह","ध्रुवीय उपग्रह","दोनों","कोई नहीं"],correct:1,exp:"ध्रुवीय उपग्रह ध्रुवों के चारों ओर घूमते हुए पूरी पृथ्वी को स्कैन कर सकते हैं, जबकि भू-स्थिर उपग्रह ऐसा नहीं कर सकता।"},
+    {q:"दूरसंचार में उपयोगी उपग्रह कौन सा है?",options:["भू-स्थिर उपग्रह","ध्रुवीय उपग्रह","दोनों समान रूप से","इनमें से कोई नहीं"],correct:0,exp:"भू-स्थिर उपग्रह पृथ्वी के सापेक्ष स्थिर दिखाई देने के कारण दूरसंचार (Communication) में उपयोगी होते हैं।"}
+  ]
+},
+
+/* ---------------- CHAPTER 12: कैप्लर के नियम (Kepler's Laws) ---------------- */
+{
+  id:12,
+  title:"कैप्लर के नियम",
+  desc:"ग्रहों की गति संबंधी तीन नियम",
+  content:`
+  <h3>ग्रहों की गति संबंधी केप्लर के नियम</h3>
+
+  <h3>प्रथम नियम — कक्षा का नियम (Law of Orbit)</h3>
+  <p>इस नियम के अनुसार, सभी ग्रह सूर्य के चारों तरफ दीर्घवृत्ताकार (elliptical) कक्षा में चक्कर लगाते हैं और सूर्य इस दीर्घवृत्त के किसी एक फोकस पर होता है।</p>
+
+  <h3>द्वितीय नियम — क्षेत्रफल का नियम / क्षेत्रीय चाल का नियम</h3>
+  <p>इस नियम के अनुसार, ग्रह की सूर्य से मिलाने वाली रेखा समान समय में समान क्षेत्रफल तय करती है, अर्थात् ग्रह की क्षेत्रीय चाल (areal velocity) समान रहती है।</p>
+  <ul>
+    <li>ग्रह जब सूर्य के नजदीक होते हैं तो तेज चलते हैं (उपसौर/Perihelion बिंदु पर)।</li>
+    <li>जब सूर्य से दूर होते हैं तो धीरे चलते हैं (अपसौर/Aphelion बिंदु पर)।</li>
+    <li>यह नियम कोणीय संवेग संरक्षण के नियम का उदाहरण है।</li>
+  </ul>
+
+  <h3>तृतीय नियम — आवर्तकाल का नियम</h3>
+  <div class="formula-box">T² ∝ r³
+  जहाँ T = ग्रह का सूर्य के चारों ओर आवर्तकाल, r = सूर्य से ग्रह की औसत दूरी</div>
+  <p><b>उदाहरण:</b> यदि r → 4r हो, तो ग्रह का आवर्तकाल (सूर्य के चारों ओर) कितना बदलेगा?<br>
+  T² ∝ r³ से, नए r के लिए T²_नया/T²_पुराना = (4r/r)³ = 64<br>
+  यदि पुराना आवर्तकाल T=1 वर्ष हो, तो नया आवर्तकाल T_नया = √64 = 8 वर्ष।</p>
+
+  <h3>केप्लर के नियमों का महत्व</h3>
+  <ul>
+    <li>ये नियम बाद में न्यूटन के गुरुत्वाकर्षण के सार्वत्रिक नियम की पुष्टि करने में सहायक बने।</li>
+    <li>तीनों नियम ग्रहों की गति की पूर्ण व्याख्या प्रदान करते हैं — कक्षा का आकार (प्रथम), चाल में परिवर्तन (द्वितीय), तथा विभिन्न ग्रहों के आवर्तकाल की तुलना (तृतीय)।</li>
+  </ul>
+  `,
+  mcqs:[
+    {q:"केप्लर के प्रथम नियम (कक्षा का नियम) के अनुसार, ग्रह सूर्य के चारों ओर किस आकार की कक्षा में परिक्रमा करते हैं?",options:["वृत्ताकार","दीर्घवृत्ताकार (Elliptical)","सरल रेखीय","परवलयाकार"],correct:1,exp:"केप्लर के प्रथम नियम के अनुसार ग्रह सूर्य के चारों ओर दीर्घवृत्ताकार कक्षा में परिक्रमा करते हैं, और सूर्य इस दीर्घवृत्त के एक फोकस पर स्थित होता है।"},
+    {q:"केप्लर के दूसरे नियम को और किस नाम से जाना जाता है?",options:["कक्षा का नियम","क्षेत्रफल का नियम (क्षेत्रीय चाल का नियम)","आवर्तकाल का नियम","द्रव्यमान संरक्षण का नियम"],correct:1,exp:"केप्लर का दूसरा नियम क्षेत्रफल का नियम (Law of Areas) या क्षेत्रीय चाल का नियम कहलाता है।"},
+    {q:"केप्लर के दूसरे नियम के अनुसार, ग्रह सूर्य के नजदीक होने पर कैसे चलते हैं?",options:["धीरे चलते हैं","तेज चलते हैं","रुक जाते हैं","स्थिर चाल से चलते हैं"],correct:1,exp:"जब ग्रह सूर्य के नजदीक (उपसौर बिंदु पर) होते हैं, तब समान क्षेत्रफल तय करने के लिए वे तेज गति से चलते हैं।"},
+    {q:"केप्लर का दूसरा नियम किस संरक्षण नियम का उदाहरण है?",options:["ऊर्जा संरक्षण","रैखिक संवेग संरक्षण","कोणीय संवेग संरक्षण","द्रव्यमान संरक्षण"],correct:2,exp:"नोट्स के अनुसार केप्लर का दूसरा नियम कोणीय संवेग संरक्षण के नियम का उदाहरण है।"},
+    {q:"केप्लर के तीसरे नियम (आवर्तकाल का नियम) का सूत्र है:",options:["T ∝ r","T² ∝ r³","T³ ∝ r²","T ∝ r²"],correct:1,exp:"केप्लर के तीसरे नियम के अनुसार T² ∝ r³, अर्थात् आवर्तकाल के वर्ग का ग्रह की सूर्य से दूरी के घन से संबंध है।"},
+    {q:"यदि किसी ग्रह की सूर्य से दूरी r से बढ़कर 4r हो जाए, तो उसका आवर्तकाल पहले (T=1 वर्ष) से कितने गुना हो जाएगा?",options:["4 गुना","8 गुना","16 गुना","64 गुना"],correct:1,exp:"T²∝r³ से T²_नया/T²_पुराना = (4)³=64, अतः T_नया/T_पुराना = √64 = 8, अर्थात् 8 गुना।"},
+    {q:"ग्रह सूर्य से दूर (अपसौर बिंदु पर) होने पर कैसे चलते हैं?",options:["तेज चलते हैं","धीरे चलते हैं","स्थिर रहते हैं","अनियमित गति से चलते हैं"],correct:1,exp:"जब ग्रह सूर्य से दूर होते हैं, तब वे धीरे चलते हैं ताकि समान समय में समान क्षेत्रफल तय हो सके (केप्लर के दूसरे नियम अनुसार)।"},
+    {q:"केप्लर के प्रथम नियम के अनुसार सूर्य कहाँ स्थित होता है?",options:["दीर्घवृत्त के केंद्र पर","दीर्घवृत्त के किसी एक फोकस पर","दीर्घवृत्त की परिधि पर","इनमें से कोई नहीं"],correct:1,exp:"सूर्य दीर्घवृत्ताकार कक्षा के दो फोकसों में से किसी एक फोकस पर स्थित होता है।"},
+    {q:"ग्रह की क्षेत्रीय चाल (areal velocity) के बारे में केप्लर का दूसरा नियम क्या कहता है?",options:["यह लगातार बदलती रहती है","यह समान (नियत) रहती है","यह शून्य होती है","यह अनंत होती है"],correct:1,exp:"केप्लर के दूसरे नियम के अनुसार ग्रह की क्षेत्रीय चाल समान (नियत) रहती है, भले ही रैखिक चाल बदलती रहे।"},
+    {q:"केप्लर के नियमों ने किस वैज्ञानिक के गुरुत्वाकर्षण सिद्धांत की पुष्टि करने में सहायता की?",options:["आइंस्टीन","न्यूटन","गैलिलियो","फैराडे"],correct:1,exp:"केप्लर के नियमों ने बाद में न्यूटन के गुरुत्वाकर्षण के सार्वत्रिक नियम की पुष्टि करने में महत्वपूर्ण भूमिका निभाई।"}
+  ]
+},
+
+/* ---------------- CHAPTER 13: सरल लोलक (Simple Pendulum) ---------------- */
+{
+  id:13,
+  title:"सरल लोलक (Simple Pendulum)",
+  desc:"आवर्तकाल, गुरुत्व पर निर्भरता, सेकंड लोलक",
+  content:`
+  <h3>सरल लोलक की मूल बातें</h3>
+  <ul>
+    <li>सरल लोलक की गति सरल आवर्त गति (SHM) होती है।</li>
+    <li>सरल लोलक का आवर्तकाल गोलक (Bob) के द्रव्यमान पर निर्भर नहीं करता है।</li>
+  </ul>
+  <div class="formula-box">आवर्तकाल: T = 2π√(ℓ/g)
+  ℓ = रस्सी की लंबाई + गोलक की त्रिज्या</div>
+
+  <h3>महत्वपूर्ण उदाहरण (Cases)</h3>
+  <ul>
+    <li><b>अलग-अलग द्रव्यमान, अलग-अलग लंबाई:</b> यदि एक किलो के लोहे के गोले तथा एक किलो के रूई के गोले (Bob) में रूई के गोलक का आर्वतकाल ज्यादा होगा यदि रूई के गोलक की लंबाई (ℓ₂) लोहे के गोलक की लंबाई (ℓ₁) से अधिक हो (ℓ₂>ℓ₁ ⇒ T₂>T₁), क्योंकि आवर्तकाल केवल ℓ पर निर्भर करता है, द्रव्यमान पर नहीं।</li>
+    <li><b>समान आकार, अलग द्रव्यमान, समान लंबाई की रस्सी:</b> समान आकार परंतु विभिन्न द्रव्यमान के दो गोलक को समान लंबाई की रस्सी से बाँधने पर दोनों गोलक का आवर्तकाल समान होगा (T₁=T₂), क्योंकि आवर्तकाल द्रव्यमान पर निर्भर नहीं करता।</li>
+    <li><b>चाँद की सतह पर ले जाना:</b> सरल लोलक को चाँद की सतह पर ले जाने पर g का मान घटता है (g↓), इसलिए T=2π√(ℓ/g) के अनुसार आवर्तकाल बढ़ जाएगा (T↑) — √6 गुना बढ़ जाएगा।</li>
+    <li><b>पृथ्वी के केंद्र पर:</b> यदि सरल लोलक को पृथ्वी के केंद्र पर ले आएँ, तो वहाँ g का मान शून्य होने की वजह से इसका आवर्तकाल अनंत हो जाएगा अर्थात् सरल लोलक का दोलन भी शुरू नहीं होगा।</li>
+  </ul>
+
+  <h3>सेकंड लोलक (Second's Pendulum)</h3>
+  <ul>
+    <li>सेकंड लोलक वह लोलक है जिसका आवर्तकाल (T) 2 सेकंड होता है।</li>
+    <li>सेकंड लोलक की लंबाई 0.994 मीटर होती है।</li>
+  </ul>
+
+  <h3>अन्य Case Study</h3>
+  <ul>
+    <li>एक झूले पर बैठा हुआ बच्चा झूलते हुए अचानक खड़ा हो जाए तो झूले का आवर्तकाल घट जाएगा (प्रभावी लंबाई ℓ घट जाने के कारण)।</li>
+    <li>एक झूले पर बैठ कर झूल रहे बच्चे के बगल में कोई दूसरा बच्चा आ कर बैठ जाए तो झूले के आवर्तकाल में कोई प्रभाव नहीं पड़ेगा (क्योंकि आवर्तकाल द्रव्यमान पर निर्भर नहीं करता)।</li>
+    <li><b>Pendulum Clock:</b> गर्मियों में — रस्सी की लंबाई ℓ बढ़ती है (ऊष्मीय प्रसार के कारण), T बढ़ता है — घड़ी सुस्त (धीमी) हो जाती है। सर्दियों में — ℓ घटती है, T घटता है — घड़ी तेज हो जाती है।</li>
+  </ul>
+  `,
+  mcqs:[
+    {q:"सरल लोलक की गति किस प्रकार की होती है?",options:["वृत्तीय गति","सरल आवर्त गति (SHM)","एकसमान रेखीय गति","त्वरित रेखीय गति"],correct:1,exp:"सरल लोलक की गति सरल आवर्त गति (Simple Harmonic Motion) होती है।"},
+    {q:"सरल लोलक का आवर्तकाल किस पर निर्भर नहीं करता?",options:["लंबाई (ℓ)","गुरुत्वीय त्वरण (g)","गोलक का द्रव्यमान","इनमें से कोई नहीं"],correct:2,exp:"आवर्तकाल T=2π√(ℓ/g) में केवल ℓ और g आते हैं, द्रव्यमान इस सूत्र में शामिल नहीं है, इसलिए आवर्तकाल गोलक के द्रव्यमान पर निर्भर नहीं करता।"},
+    {q:"समान आकार परंतु भिन्न द्रव्यमान (जैसे 3kg और 5kg) के दो गोलकों को समान लंबाई की रस्सी से बाँधने पर उनके आवर्तकाल की तुलना होगी:",options:["दोनों का आवर्तकाल समान होगा","भारी गोलक का आवर्तकाल अधिक होगा","हल्के गोलक का आवर्तकाल अधिक होगा","तुलना संभव नहीं"],correct:0,exp:"चूँकि आवर्तकाल द्रव्यमान पर निर्भर नहीं करता, समान लंबाई पर दोनों गोलकों (भिन्न द्रव्यमान के) का आवर्तकाल समान होगा।"},
+    {q:"सरल लोलक को चाँद की सतह पर ले जाने पर उसका आवर्तकाल कैसा होगा?",options:["घट जाएगा","बढ़ जाएगा","अपरिवर्तित रहेगा","शून्य हो जाएगा"],correct:1,exp:"चाँद पर g पृथ्वी की तुलना में कम है (g_चाँद=g_पृथ्वी/6), और T=2π√(ℓ/g) में g घटने पर T बढ़ता है, अतः आवर्तकाल बढ़ जाएगा (√6 गुना)।"},
+    {q:"यदि सरल लोलक को पृथ्वी के केंद्र पर ले आएँ, तो उसका आवर्तकाल क्या होगा?",options:["शून्य","2 सेकंड","अनंत","पृथ्वी सतह जितना ही"],correct:2,exp:"पृथ्वी के केंद्र पर g का मान शून्य हो जाता है, इसलिए T=2π√(ℓ/g) में हर शून्य होने से आवर्तकाल अनंत हो जाएगा — दोलन शुरू ही नहीं होगा।"},
+    {q:"सेकंड लोलक (Second's Pendulum) का आवर्तकाल कितना होता है?",options:["1 सेकंड","2 सेकंड","4 सेकंड","0.5 सेकंड"],correct:1,exp:"सेकंड लोलक वह लोलक है जिसका आवर्तकाल ठीक 2 सेकंड होता है।"},
+    {q:"सेकंड लोलक की लंबाई लगभग कितनी होती है?",options:["0.5 मीटर","0.994 मीटर","2 मीटर","1.5 मीटर"],correct:1,exp:"सेकंड लोलक की लंबाई लगभग 0.994 मीटर होती है।"},
+    {q:"एक झूले पर बैठा हुआ बच्चा झूलते हुए अचानक खड़ा हो जाए, तो झूले का आवर्तकाल:",options:["बढ़ जाएगा","घट जाएगा","अपरिवर्तित रहेगा","शून्य हो जाएगा"],correct:1,exp:"बच्चे के खड़े होने से लोलक की प्रभावी लंबाई (ℓ) घट जाती है, इसलिए T=2π√(ℓ/g) के अनुसार आवर्तकाल घट जाएगा।"},
+    {q:"झूले पर झूल रहे बच्चे के बगल में कोई दूसरा बच्चा आकर बैठ जाए, तो झूले के आवर्तकाल पर क्या प्रभाव पड़ेगा?",options:["बढ़ जाएगा","घट जाएगा","कोई प्रभाव नहीं पड़ेगा","शून्य हो जाएगा"],correct:2,exp:"चूँकि आवर्तकाल द्रव्यमान पर निर्भर नहीं करता (केवल ℓ व g पर निर्भर करता है), दूसरे बच्चे के आने से द्रव्यमान बढ़ने पर भी आवर्तकाल पर कोई असर नहीं पड़ेगा।"},
+    {q:"गर्मियों में Pendulum Clock (लोलक घड़ी) का क्या होता है?",options:["घड़ी तेज हो जाती है","घड़ी सुस्त (धीमी) हो जाती है","घड़ी बंद हो जाती है","कोई प्रभाव नहीं पड़ता"],correct:1,exp:"गर्मियों में ऊष्मीय प्रसार के कारण रस्सी की लंबाई (ℓ) बढ़ती है, जिससे आवर्तकाल (T) बढ़ता है और घड़ी सुस्त (धीमी) हो जाती है।"}
+  ]
+},
+
+/* ---------------- CHAPTER 14: एकसमान वृत्तीय गति ---------------- */
+{
+  id:14,
+  title:"एकसमान वृत्तीय गति",
+  desc:"अभिकेंद्री व अपकेंद्री बल",
+  content:`
+  <h3>एकसमान वृत्तीय गति की मूल बातें</h3>
+  <ul>
+    <li>एकसमान वृत्तीय गति में किसी वस्तु की दिशा हर बिंदु पर बदलती रहती है, परंतु चाल नियत रहती है।</li>
+    <li>अभिकेंद्री बल (Fc) — केंद्र की ओर कार्य करता है — एकसमान वृत्तीय गति के लिए जिम्मेदार होता है।</li>
+    <li>अपकेंद्रीय बल (Fc') — त्रिज्यत: बाहर की ओर कार्य करता है — यह अभिकेंद्री बल के बराबर व विपरीत दिशा में होता है।</li>
+    <li>एकसमान वृत्तीय गति में बल तथा वेग के बीच का कोण 90° होता है।</li>
+    <li>एकसमान वृत्तीय गति में वस्तु की चाल नियत रहती है जबकि उसका वेग (दिशा बदलने के कारण) लगातार बदलता रहता है।</li>
+    <li>एकसमान वृत्तीय गति को त्वरित गति (Accelerated Motion) भी कहते हैं (क्योंकि वेग की दिशा लगातार बदलती है)।</li>
+  </ul>
+
+  <h3>महत्वपूर्ण सूत्र</h3>
+  <div class="formula-box">त्वरण का परिमाण (अभिकेंद्री त्वरण): a = v²/R
+  v = वस्तु की चाल, R = वृत्त की त्रिज्या</div>
+  <div class="formula-box">अपकेंद्रीय बल, अभिकेंद्री बल के बराबर और विपरीत दिशा में होता है:
+  F⃗c' = −F⃗c = m(v²/R)</div>
+
+  <h3>अपकेंद्रीय बल के उदाहरण</h3>
+  <ul>
+    <li>दही से मक्खन का अलग होना (मथने की प्रक्रिया में)</li>
+    <li>दूध से क्रीम का अलग होना (Cream Separator में)</li>
+    <li>साइकिल सवार पर वृत्ताकार मार्ग पर मुड़ते समय बाहर की ओर लगने वाला बल</li>
+    <li>Washing Machine में कपड़ों का सूखना (spin cycle में अपकेंद्रीय बल के कारण पानी कपड़ों से अलग होकर बाहर निकलता है)</li>
+  </ul>
+
+  <h3>महत्वपूर्ण तथ्य</h3>
+  <ul>
+    <li>वृत्तीय गति में अभिकेंद्री बल केंद्र की ओर होता है इसलिए यह वस्तु को वृत्तीय पथ पर बनाए रखता है, यदि यह बल हटा दिया जाए तो वस्तु सीधी रेखा में (स्पर्शरेखीय दिशा में) चली जाएगी।</li>
+    <li>अभिकेंद्री बल के बिना कोई भी वस्तु वृत्तीय पथ पर गति नहीं कर सकती।</li>
+    <li>अपकेंद्रीय बल एक आभासी बल (pseudo force) है जो घूर्णन फ्रेम में महसूस होता है।</li>
+  </ul>
+  `,
+  mcqs:[
+    {q:"एकसमान वृत्तीय गति में किसी वस्तु की चाल कैसी रहती है?",options:["लगातार बढ़ती है","लगातार घटती है","नियत रहती है","शून्य हो जाती है"],correct:2,exp:"एकसमान वृत्तीय गति में वस्तु की चाल (speed) नियत रहती है, जबकि दिशा बदलने के कारण वेग (velocity) बदलता रहता है।"},
+    {q:"एकसमान वृत्तीय गति के लिए कौन सा बल जिम्मेदार होता है?",options:["अपकेंद्रीय बल","अभिकेंद्री बल","गुरुत्वाकर्षण बल","घर्षण बल"],correct:1,exp:"अभिकेंद्री बल (Centripetal Force) जो केंद्र की ओर कार्य करता है, वह एकसमान वृत्तीय गति के लिए जिम्मेदार होता है।"},
+    {q:"एकसमान वृत्तीय गति में बल तथा वेग के बीच का कोण कितना होता है?",options:["0°","45°","90°","180°"],correct:2,exp:"अभिकेंद्री बल हमेशा वेग की दिशा के लंबवत (90°) कार्य करता है, जिससे चाल में परिवर्तन नहीं होता, केवल दिशा बदलती है।"},
+    {q:"एकसमान वृत्तीय गति को किस अन्य नाम से जाना जाता है?",options:["एकसमान रेखीय गति","त्वरित गति (Accelerated Motion)","विराम अवस्था","आवर्त गति नहीं"],correct:1,exp:"चूँकि वेग की दिशा लगातार बदलती रहती है, इसलिए एकसमान वृत्तीय गति को त्वरित गति भी कहा जाता है।"},
+    {q:"अभिकेंद्री त्वरण का सूत्र है:",options:["a = v/R","a = v²/R","a = v²R","a = v/R²"],correct:1,exp:"अभिकेंद्री त्वरण a = v²/R होता है, जहाँ v चाल और R वृत्त की त्रिज्या है।"},
+    {q:"अपकेंद्रीय बल (Fc') और अभिकेंद्री बल (Fc) के बीच संबंध है:",options:["Fc' = Fc (समान दिशा में)","Fc' = −Fc (बराबर व विपरीत दिशा में)","Fc' = 2Fc","Fc' सदैव शून्य होता है"],correct:1,exp:"अपकेंद्रीय बल अभिकेंद्री बल के बराबर परिमाण का होता है परंतु विपरीत दिशा (त्रिज्यत: बाहर) में कार्य करता है।"},
+    {q:"दही से मक्खन अलग होना किस बल का उदाहरण है?",options:["अभिकेंद्री बल","अपकेंद्रीय बल","गुरुत्वाकर्षण बल","चुंबकीय बल"],correct:1,exp:"मथने की प्रक्रिया में घूर्णन के कारण उत्पन्न अपकेंद्रीय बल से दही से मक्खन अलग हो जाता है।"},
+    {q:"साइकिल सवार के वृत्ताकार मार्ग पर मुड़ते समय बाहर की ओर महसूस होने वाला बल कहलाता है:",options:["अभिकेंद्री बल","अपकेंद्रीय बल","घर्षण बल","गुरुत्वाकर्षण बल"],correct:1,exp:"यह अपकेंद्रीय बल का एक उदाहरण है, जो वृत्तीय मार्ग पर मुड़ते समय बाहर की ओर महसूस होता है।"},
+    {q:"यदि किसी वृत्तीय गति करती वस्तु पर से अभिकेंद्री बल हटा दिया जाए, तो वस्तु किस दिशा में गति करेगी?",options:["वृत्त के केंद्र की ओर","सीधी रेखा (स्पर्शरेखीय दिशा) में","विपरीत दिशा में","वह रुक जाएगी"],correct:1,exp:"अभिकेंद्री बल हटने पर, न्यूटन के पहले नियम के अनुसार वस्तु उस बिंदु पर स्पर्शरेखा की दिशा में सीधी रेखा में गति करेगी।"},
+    {q:"Washing Machine में कपड़ों का सूखना किस बल के कारण होता है?",options:["अभिकेंद्री बल","अपकेंद्रीय बल","घर्षण बल","चुंबकीय बल"],correct:1,exp:"स्पिन साइकल के दौरान तेज घूर्णन से उत्पन्न अपकेंद्रीय बल कपड़ों से पानी को अलग करके बाहर निकाल देता है।"}
+  ]
+},
+
+/* ---------------- CHAPTER 15: मात्रक और विमा (Units and Dimensions) ---------------- */
+{
+  id:15,
+  title:"मात्रक और विमा",
+  desc:"सात मूलभूत राशियाँ, विमीय सूत्र, बल आघूर्ण",
+  content:`
+  <h3>सात मूलभूत भौतिक राशियाँ</h3>
+  <div class="mini-table">
+    <tr><th>राशि</th><th>मात्रक</th><th>विमा</th></tr>
+    <tr><td>लंबाई</td><td>मीटर (m)</td><td>[L]</td></tr>
+    <tr><td>द्रव्यमान</td><td>किलोग्राम (kg)</td><td>[M]</td></tr>
+    <tr><td>समय</td><td>सैकंड (s)</td><td>[T]</td></tr>
+    <tr><td>तापमान</td><td>केल्विन (K)</td><td>[K] या [θ]</td></tr>
+    <tr><td>वैद्युत धारा</td><td>एम्पियर (A)</td><td>[A]</td></tr>
+    <tr><td>पदार्थ की मात्रा</td><td>मोल (mole)</td><td>[mol]</td></tr>
+    <tr><td>ज्योति तीव्रता</td><td>कैंडिला (cd)</td><td>[cd]</td></tr>
+  </div>
+  <div class="formula-box">पदार्थ की मात्रा मोल से मापी जाती है: 1 मोल = 6.023×10²³ molecule/atom (आवोगाद्रो संख्या)</div>
+
+  <h3>व्युत्पन्न राशियों के विमीय सूत्र</h3>
+  <div class="mini-table">
+    <tr><th>भौतिक राशि</th><th>मात्रक</th><th>विमा</th></tr>
+    <tr><td>दूरी / विस्थापन</td><td>मीटर</td><td>[M⁰LT⁰]</td></tr>
+    <tr><td>चाल / वेग</td><td>m/s</td><td>[M⁰LT⁻¹]</td></tr>
+    <tr><td>त्वरण</td><td>m/s²</td><td>[M⁰LT⁻²]</td></tr>
+    <tr><td>रैखिक संवेग</td><td>kg-m/s</td><td>[MLT⁻¹]</td></tr>
+    <tr><td>बल (न्यूटन)</td><td>N (F=ma)</td><td>[MLT⁻²]</td></tr>
+    <tr><td>सार्वत्रिक गुरुत्वाकर्षण नियतांक (G)</td><td>N-m²/kg²</td><td>[M⁻¹L³T⁻²]</td></tr>
+    <tr><td>क्षेत्रफल</td><td>m²</td><td>[L²]</td></tr>
+    <tr><td>आयतन</td><td>m³</td><td>[L³]</td></tr>
+    <tr><td>घनत्व</td><td>kg/m³</td><td>[ML⁻³]</td></tr>
+    <tr><td>दाब</td><td>पास्कल (Pa)</td><td>[ML⁻¹T⁻²]</td></tr>
+    <tr><td>कार्य / ऊर्जा</td><td>जूल</td><td>[ML²T⁻²]</td></tr>
+    <tr><td>बल आघूर्ण (समान विमा)</td><td>N-m</td><td>[ML²T⁻²]</td></tr>
+    <tr><td>यांत्रिक शक्ति</td><td>वाट (W)</td><td>[ML²T⁻³]</td></tr>
+    <tr><td>पृष्ठ तनाव / स्प्रिंग नियतांक (समान विमा)</td><td>N/m</td><td>[MT⁻²]</td></tr>
+    <tr><td>पृष्ठ ऊर्जा</td><td>जूल/मीटर²</td><td>[MT⁻²]</td></tr>
+    <tr><td>कोणीय संवेग / प्लांक नियतांक (समान विमा)</td><td>kg-m²/s</td><td>[ML²T⁻¹]</td></tr>
+    <tr><td>बोल्ट्जमेन नियतांक (k)</td><td>जूल/केल्विन</td><td>[ML²T⁻²θ⁻¹]</td></tr>
+    <tr><td>सार्वत्रिक गैस नियतांक (R)</td><td>जूल/मोल-K</td><td>[ML²T⁻²mol⁻¹θ⁻¹]</td></tr>
+    <tr><td>वैद्युत आवेश</td><td>कूलॉम</td><td>[AT]</td></tr>
+    <tr><td>तरंगदैर्ध्य</td><td>मीटर</td><td>[L]</td></tr>
+    <tr><td>आवृत्ति</td><td>हर्ट्ज</td><td>[T⁻¹]</td></tr>
+    <tr><td>लेंस की शक्ति</td><td>डायोप्टर (D)</td><td>[L⁻¹]</td></tr>
+  </div>
+
+  <h3>बल आघूर्ण (Torque)</h3>
+  <ul>
+    <li>बल आघूर्ण का मात्रक — न्यूटन-मीटर; इसे 'τ' से प्रदर्शित करते हैं।</li>
+    <li>बल आघूर्ण एक सदिश राशि है।</li>
+  </ul>
+  <div class="formula-box">τ = r×F×sinθ; यदि θ=90°, sin90°=1 (अधिकतम मान)</div>
+
+  <h3>महत्वपूर्ण मात्रकहीन (Dimensionless) राशियाँ</h3>
+  <p>विकृति (strain), कोण (angle), अपवर्तक सूचकांक (refractive index) — ये सभी मात्रकहीन राशियाँ हैं (इनकी कोई विमा नहीं होती, केवल संख्या होती है)।</p>
+
+  <h3>विद्युत प्रतिरोध का विमीय सूत्र (उदाहरण गणना)</h3>
+  <div class="formula-box">V = IR ⇒ R = V/I
+  R = [ML²T⁻³A⁻¹] / [A] = [ML²T⁻³A⁻²]</div>
+  `,
+  mcqs:[
+    {q:"पदार्थ की मात्रा (Amount of substance) का SI मात्रक क्या है?",options:["किलोग्राम","मोल (mole)","कैंडिला","एम्पियर"],correct:1,exp:"पदार्थ की मात्रा को मोल (mole) से मापा जाता है — यह सात मूलभूत राशियों में से एक है।"},
+    {q:"1 मोल में कितने अणु/परमाणु होते हैं (आवोगाद्रो संख्या)?",options:["6.023×10²²","6.023×10²³","3.14×10²³","9.1×10⁻³¹"],correct:1,exp:"1 मोल = 6.023×10²³ molecule/atom (आवोगाद्रो संख्या)।"},
+    {q:"बल (Force) का विमीय सूत्र है:",options:["[MLT⁻¹]","[MLT⁻²]","[ML²T⁻²]","[ML⁻¹T⁻²]"],correct:1,exp:"F=ma से बल का विमीय सूत्र [MLT⁻²] होता है (द्रव्यमान × त्वरण)।"},
+    {q:"कार्य (Work) और ऊर्जा (Energy) दोनों का विमीय सूत्र है:",options:["[MLT⁻²]","[ML²T⁻²]","[ML²T⁻³]","[ML⁻¹T⁻²]"],correct:1,exp:"कार्य W=FScosθ=[MLT⁻²][L]=[ML²T⁻²], जो ऊर्जा के विमीय सूत्र के समान है क्योंकि ऊर्जा और कार्य समान विमा वाली राशियाँ हैं।"},
+    {q:"बल आघूर्ण (Torque) और कार्य/ऊर्जा दोनों का विमीय सूत्र किस प्रकार संबंधित है?",options:["पूर्णतः भिन्न होते हैं","दोनों समान विमा वाले होते हैं ([ML²T⁻²])","बल आघूर्ण का विमीय सूत्र अधिक होता है","ऊर्जा का विमीय सूत्र अधिक होता है"],correct:1,exp:"नोट्स के अनुसार बल आघूर्ण τ=r×F तथा कार्य W=F×S दोनों का विमीय सूत्र [ML²T⁻²] समान होता है, हालाँकि इनके भौतिक अर्थ अलग-अलग हैं।"},
+    {q:"निम्न में से कौन एक मात्राहीन (आयामहीन) राशि है?",options:["विकृति (Strain)","कोण","अपवर्तक सूचकांक","उपरोक्त सभी"],correct:3,exp:"विकृति, कोण और अपवर्तक सूचकांक — ये सभी मात्रकहीन (dimensionless) राशियाँ हैं।"},
+    {q:"विद्युत प्रतिरोध (Resistance) का विमीय सूत्र है:",options:["[ML²T⁻³A⁻²]","[ML²T⁻³A⁻⁴]","[MLT⁻³A⁻¹]","[ML²T⁻²A⁻²]"],correct:0,exp:"R=V/I, V का विमीय सूत्र [ML²T⁻³A⁻¹] है, इसे I=[A] से भाग देने पर R=[ML²T⁻³A⁻²] प्राप्त होता है।"},
+    {q:"यांत्रिक शक्ति (Power) का विमीय सूत्र है:",options:["[ML²T⁻²]","[ML²T⁻³]","[MLT⁻²]","[ML⁻¹T⁻²]"],correct:1,exp:"शक्ति P=W/t=[ML²T⁻²]/[T]=[ML²T⁻³]।"},
+    {q:"तापमान की SI मात्रक और उसकी विमा है:",options:["सेल्सियस, [C]","केल्विन, [K] या [θ]","फारेनहाइट, [F]","कोई विमा नहीं"],correct:1,exp:"तापमान का SI मात्रक केल्विन है और इसकी विमा [K] या [θ] से दर्शाई जाती है।"},
+    {q:"G (सार्वत्रिक गुरुत्वाकर्षण नियतांक) का विमीय सूत्र है:",options:["[MLT⁻²]","[M⁻¹L³T⁻²]","[ML²T⁻²]","[ML³T⁻¹]"],correct:1,exp:"G = Fr²/(m₁m₂) से विमीय सूत्र निकलता है [M⁻¹L³T⁻²]।"}
+  ]
+}
+];
+
+/* Compute total MCQ count */
+const TOTAL_MCQS = chapters.reduce((s,c)=>s+c.mcqs.length,0);
+
+/* ================== FULL TEST BUILDER (50 Qs, balanced across chapters) ================== */
+function buildFullTest(){
+  let pool = [];
+  chapters.forEach(ch=>{
+    ch.mcqs.forEach(m=>{
+      pool.push({q:m.q, options:m.options, correct:m.correct, exp:m.exp, chapterTitle:ch.title, chapterId:ch.id});
+    });
+  });
+  // round-robin selection across chapters for balance, until 50 reached
+  let byChapter = chapters.map(ch=>ch.mcqs.map(m=>({q:m.q,options:m.options,correct:m.correct,exp:m.exp,chapterTitle:ch.title,chapterId:ch.id})));
+  let result = [];
+  let idx = 0;
+  while(result.length < 50){
+    let addedAny = false;
+    for(let i=0;i<byChapter.length;i++){
+      if(byChapter[i][idx]){
+        result.push(byChapter[i][idx]);
+        addedAny = true;
+        if(result.length>=50) break;
+      }
+    }
+    if(!addedAny) break;
+    idx++;
+  }
+  return result.slice(0,50);
+}
+const FULL_TEST_QUESTIONS = buildFullTest();
+
+/* ================== APP STATE & NAVIGATION ================== */
+let viewStack = ['home'];
+let currentChapter = null;
+let quiz = null; // {questions, answers, current, timerId, remaining, mode, chapterTitle}
+
+function $(id){return document.getElementById(id);}
+
+function showView(id){
+  document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));
+  $(id).classList.remove('hidden');
+}
+
+function setTopbar(title, sub, showBack){
+  $('topTitle').textContent = title;
+  $('topSub').textContent = sub || '';
+  $('backBtn').classList.toggle('hidden', !showBack);
+}
+
+function goBack(){
+  if(quiz && quiz.timerId){
+    openLeaveQuizConfirm(()=>{ stopTimer(); navigateHome(); });
+    return;
+  }
+  navigateHome();
+}
+function navigateHome(){
+  showView('view-home');
+  setTopbar('SSC Physics','भौतिक विज्ञान अध्ययन केंद्र',false);
+  window.scrollTo(0,0);
+}
+
+/* ================== INIT HOME ================== */
+function renderHome(){
+  $('totalMcqCount').textContent = TOTAL_MCQS+'+';
+  const grid = $('chaptersGrid');
+  grid.innerHTML = chapters.map(ch=>`
+    <div class="chap-card">
+      <div class="chap-top">
+        <div class="chap-num">${ch.id}</div>
+        <div class="chap-info">
+          <h4>${ch.title}</h4>
+          <div class="desc">${ch.desc}</div>
+          <div class="chap-meta">${ch.mcqs.length} MCQs उपलब्ध</div>
+        </div>
+      </div>
+      <div class="chap-actions">
+        <button class="btn btn-primary" onclick="openChapterStudy(${ch.id})">📖 Study Chapter</button>
+        <button class="btn btn-outline" onclick="openChapterQuizIntro(${ch.id})">📝 Practice MCQ</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ================== CHAPTER STUDY ================== */
+function openChapterStudy(id){
+  const ch = chapters.find(c=>c.id===id);
+  currentChapter = ch;
+  $('studyContent').innerHTML = `
+    <div class="study-hero">
+      <h2>अध्याय ${ch.id}: ${ch.title}</h2>
+      <div class="desc">${ch.desc}</div>
+    </div>
+    <div class="study-body">${ch.content}</div>
+    <div class="study-cta">
+      <button onclick="navigateHome()" style="background:var(--bg);color:var(--navy);border:1px solid var(--line);">← Back to Chapters</button>
+      <button onclick="openChapterQuizIntro(${ch.id})" style="background:var(--teal);color:#fff;">Practice Chapter MCQs</button>
+    </div>
+  `;
+  showView('view-study');
+  setTopbar(ch.title,'चैप्टर स्टडी',true);
+  window.scrollTo(0,0);
+}
+
+/* ================== QUIZ INTRO SCREENS ================== */
+function openChapterQuizIntro(id){
+  const ch = chapters.find(c=>c.id===id);
+  currentChapter = ch;
+  $('introCard').innerHTML = `
+    <h2>${ch.title} — MCQ Test</h2>
+    <p style="font-size:12.5px;color:var(--ink-soft);">इस चैप्टर पर आधारित अभ्यास प्रश्न</p>
+    <div class="intro-stats">
+      <div class="intro-stat"><b>${ch.mcqs.length}</b><span>प्रश्न</span></div>
+      <div class="intro-stat"><b>2</b><span>मिनट</span></div>
+      <div class="intro-stat"><b>4</b><span>विकल्प/प्रश्न</span></div>
+    </div>
+    <ul class="intro-rules">
+      <li>• टाइमर समाप्त होने पर टेस्ट अपने आप जमा (submit) हो जाएगा।</li>
+      <li>• आप किसी भी समय Submit Test बटन दबाकर टेस्ट जमा कर सकते हैं।</li>
+      <li>• जमा करने के बाद उत्तर नहीं बदले जा सकते।</li>
+      <li>• प्रश्न पैलेट से किसी भी प्रश्न पर सीधे जा सकते हैं।</li>
+    </ul>
+    <button class="start-btn" onclick="startQuiz('chapter', ${ch.id})">Start Chapter Test शुरू करें</button>
+  `;
+  showView('view-quizintro');
+  setTopbar(ch.title,'टेस्ट की जानकारी',true);
+  window.scrollTo(0,0);
+}
+
+function openFullTestIntro(){
+  $('introCard').innerHTML = `
+    <h2>Full Physics Test</h2>
+    <p style="font-size:12.5px;color:var(--ink-soft);">संपूर्ण SSC भौतिकी सिलेबस पर आधारित</p>
+    <div class="intro-stats">
+      <div class="intro-stat"><b>50</b><span>प्रश्न</span></div>
+      <div class="intro-stat"><b>12</b><span>मिनट</span></div>
+      <div class="intro-stat"><b>15</b><span>चैप्टर कवर</span></div>
+    </div>
+    <ul class="intro-rules">
+      <li>• यह टेस्ट सभी 15 चैप्टर्स से संतुलित रूप से चुने गए प्रश्नों पर आधारित है।</li>
+      <li>• टाइमर समाप्त होने पर टेस्ट अपने आप जमा हो जाएगा और परिणाम दिखेगा।</li>
+      <li>• परिणाम में चैप्टर-वाइज़ प्रदर्शन भी दिखाया जाएगा।</li>
+      <li>• जमा करने के बाद उत्तर नहीं बदले जा सकते।</li>
+    </ul>
+    <button class="start-btn" onclick="startQuiz('full', null)">Start Full Test शुरू करें</button>
+  `;
+  showView('view-quizintro');
+  setTopbar('Full Physics Test','टेस्ट की जानकारी',true);
+  window.scrollTo(0,0);
+}
+
+/* ================== QUIZ ENGINE ================== */
+function startQuiz(mode, chapterId){
+  let questions, seconds, title;
+  if(mode==='chapter'){
+    const ch = chapters.find(c=>c.id===chapterId);
+    questions = ch.mcqs.map(m=>({q:m.q,options:m.options,correct:m.correct,exp:m.exp,chapterTitle:ch.title}));
+    seconds = 120;
+    title = ch.title;
+  } else {
+    questions = FULL_TEST_QUESTIONS.slice();
+    seconds = 12*60;
+    title = 'Full Physics Test';
+  }
+  quiz = {
+    mode, questions, title,
+    answers: new Array(questions.length).fill(null),
+    current: 0,
+    remaining: seconds,
+    totalTime: seconds,
+    submitted:false
+  };
+  showView('view-quiz');
+  setTopbar(title, 'Question 1 / '+questions.length, true);
+  renderQuestion();
+  renderPalette();
+  startTimer();
+  window.scrollTo(0,0);
+}
+
+function startTimer(){
+  stopTimer();
+  updateTimerDisplay();
+  quiz.timerId = setInterval(()=>{
+    quiz.remaining--;
+    updateTimerDisplay();
+    if(quiz.remaining<=0){
+      stopTimer();
+      submitQuiz(true);
+    }
+  },1000);
+}
+function stopTimer(){
+  if(quiz && quiz.timerId){ clearInterval(quiz.timerId); quiz.timerId=null; }
+}
+function updateTimerDisplay(){
+  const m = Math.floor(quiz.remaining/60);
+  const s = quiz.remaining%60;
+  const el = $('qTimer');
+  el.textContent = (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+  el.classList.toggle('low', quiz.remaining<=20);
+}
+
+function renderQuestion(){
+  const i = quiz.current;
+  const q = quiz.questions[i];
+  $('qProgress').textContent = 'Question '+(i+1)+' / '+quiz.questions.length;
+  const letters = ['A','B','C','D'];
+  $('qCard').innerHTML = `
+    <div class="q-text">${i+1}. ${q.q}</div>
+    ${q.options.map((opt,idx)=>{
+      let cls='opt';
+      if(quiz.answers[i]===idx) cls+=' selected';
+      return `<div class="${cls}" onclick="selectAnswer(${idx})">
+        <div class="opt-letter">${letters[idx]}</div>
+        <div>${opt}</div>
+      </div>`;
+    }).join('')}
+  `;
+  $('nextBtn').textContent = (i===quiz.questions.length-1) ? 'समाप्त' : 'अगला →';
+  renderPalette();
+}
+
+function selectAnswer(idx){
+  if(quiz.submitted) return;
+  quiz.answers[quiz.current] = idx;
+  renderQuestion();
+}
+
+function nextQuestion(){
+  if(quiz.current < quiz.questions.length-1){
+    quiz.current++;
+    renderQuestion();
+    window.scrollTo(0,0);
+  } else {
+    confirmSubmit();
+  }
+}
+function prevQuestion(){
+  if(quiz.current>0){
+    quiz.current--;
+    renderQuestion();
+    window.scrollTo(0,0);
+  }
+}
+function jumpTo(i){
+  quiz.current = i;
+  renderQuestion();
+  window.scrollTo(0,0);
+}
+
+function renderPalette(){
+  const grid = $('paletteGrid');
+  grid.innerHTML = quiz.questions.map((q,i)=>{
+    let cls = 'p-btn ';
+    cls += quiz.answers[i]!==null ? 'attempted' : 'unattempted';
+    if(i===quiz.current) cls += ' current';
+    return `<button class="${cls}" onclick="jumpTo(${i})">${i+1}</button>`;
+  }).join('');
+}
+
+/* ---------------- Submit / Confirm modal ---------------- */
+function confirmSubmit(){
+  const attempted = quiz.answers.filter(a=>a!==null).length;
+  const remain = quiz.questions.length - attempted;
+  showModal(
+    'टेस्ट जमा करें?',
+    `आपने ${attempted} प्रश्नों के उत्तर दिए हैं और ${remain} प्रश्न बाकी हैं। क्या आप वाकई टेस्ट जमा करना चाहते हैं?`,
+    [
+      {label:'रद्द करें', style:'background:var(--bg);color:var(--navy);', action:closeModal},
+      {label:'हाँ, जमा करें', style:'background:var(--red);color:#fff;', action:()=>{closeModal(); stopTimer(); submitQuiz(false);}}
+    ]
+  );
+}
+function openLeaveQuizConfirm(onConfirm){
+  showModal(
+    'टेस्ट छोड़ें?',
+    'यदि आप अभी बाहर जाते हैं तो आपकी प्रगति खो जाएगी। क्या आप वाकई बाहर जाना चाहते हैं?',
+    [
+      {label:'रद्द करें', style:'background:var(--bg);color:var(--navy);', action:closeModal},
+      {label:'हाँ, बाहर जाएँ', style:'background:var(--red);color:#fff;', action:()=>{closeModal(); onConfirm();}}
+    ]
+  );
+}
+function showModal(title, msg, actions){
+  $('modalRoot').innerHTML = `
+    <div class="modal-overlay">
+      <div class="modal-box">
+        <h3>${title}</h3>
+        <p>${msg}</p>
+        <div class="modal-actions" id="modalActions"></div>
+      </div>
+    </div>
+  `;
+  const actEl = $('modalActions');
+  actions.forEach((a,idx)=>{
+    const b = document.createElement('button');
+    b.textContent = a.label;
+    b.style.cssText = a.style;
+    b.onclick = a.action;
+    actEl.appendChild(b);
+  });
+}
+function closeModal(){ $('modalRoot').innerHTML=''; }
+
+/* ---------------- Submit & Result ---------------- */
+function submitQuiz(autoSubmit){
+  quiz.submitted = true;
+  stopTimer();
+  let correct=0, wrong=0, unattempted=0;
+  const chapterStats = {};
+  quiz.questions.forEach((q,i)=>{
+    const a = quiz.answers[i];
+    if(a===null){ unattempted++; }
+    else if(a===q.correct){ correct++; }
+    else { wrong++; }
+    if(quiz.mode==='full'){
+      const key = q.chapterTitle;
+      if(!chapterStats[key]) chapterStats[key]={correct:0,total:0};
+      chapterStats[key].total++;
+      if(a===q.correct) chapterStats[key].correct++;
+    }
+  });
+  const total = quiz.questions.length;
+  const pct = Math.round((correct/total)*100);
+  const timeUsed = quiz.totalTime - quiz.remaining;
+  const mm = Math.floor(timeUsed/60), ss=timeUsed%60;
+
+  let chapterPerfHtml = '';
+  if(quiz.mode==='full'){
+    chapterPerfHtml = `
+      <div class="chapter-perf">
+        <h4>चैप्टर-वाइज़ प्रदर्शन</h4>
+        ${Object.keys(chapterStats).map(k=>{
+          const s = chapterStats[k];
+          const p = Math.round((s.correct/s.total)*100);
+          return `<div class="cp-row">
+            <div class="cp-name" title="${k}">${k}</div>
+            <div class="cp-bar-wrap"><div class="cp-bar" style="width:${p}%;"></div></div>
+            <div style="width:40px;text-align:right;">${s.correct}/${s.total}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  $('resultContent').innerHTML = `
+    <div class="result-hero">
+      <div class="pct">${pct}%</div>
+      <div class="pct-label">${autoSubmit?'समय समाप्त — ':''}आपका स्कोर</div>
+    </div>
+    <div class="result-grid">
+      <div class="rstat"><b>${total}</b><span>कुल प्रश्न</span></div>
+      <div class="rstat"><b>${correct+wrong}</b><span>हल किए</span></div>
+      <div class="rstat correct"><b>${correct}</b><span>सही</span></div>
+      <div class="rstat wrong"><b>${wrong}</b><span>गलत</span></div>
+      <div class="rstat unattempted"><b>${unattempted}</b><span>छोड़े गए</span></div>
+      <div class="rstat"><b>${mm}:${ss<10?'0':''}${ss}</b><span>समय लगा</span></div>
+    </div>
+    ${chapterPerfHtml}
+    <div class="result-actions">
+      <button style="background:var(--bg);color:var(--navy);border:1px solid var(--line);" onclick="navigateHome()">🏠 होम</button>
+      <button style="background:var(--teal);color:#fff;" onclick="openReview()">📋 उत्तर समीक्षा (Review)</button>
+    </div>
+  `;
+  showView('view-result');
+  setTopbar('परिणाम','Result',true);
+  window.scrollTo(0,0);
+}
+
+/* ---------------- Review ---------------- */
+function openReview(){
+  const letters=['A','B','C','D'];
+  $('reviewContent').innerHTML = quiz.questions.map((q,i)=>{
+    const a = quiz.answers[i];
+    let tag;
+    if(a===null) tag = '<span class="tag-pill tag-skip">छोड़ा गया</span>';
+    else if(a===q.correct) tag = '<span class="tag-pill tag-correct">सही</span>';
+    else tag = '<span class="tag-pill tag-wrong">गलत</span>';
+    return `
+      <div class="review-item">
+        <div class="review-qtag">प्रश्न ${i+1} ${tag}</div>
+        <div class="q-text" style="margin-bottom:10px;">${q.q}</div>
+        ${q.options.map((opt,idx)=>{
+          let cls='opt';
+          if(idx===q.correct) cls+=' correct';
+          else if(idx===a && a!==q.correct) cls+=' wrong';
+          return `<div class="${cls}">
+            <div class="opt-letter">${letters[idx]}</div>
+            <div>${opt}</div>
+          </div>`;
+        }).join('')}
+        <div class="review-exp"><b>व्याख्या:</b> ${q.exp}</div>
+      </div>
+    `;
+  }).join('');
+  showView('view-review');
+  setTopbar('उत्तर समीक्षा','Review Answers',true);
+  window.scrollTo(0,0);
+}
+
+/* ---------------- Init ---------------- */
+window.onbeforeunload = function(e){
+  if(quiz && quiz.timerId && !quiz.submitted){
+    e.preventDefault();
+    e.returnValue = '';
+    return '';
+  }
+};
+
+renderHome();
+navigateHome();
+</script>
+</body>
+</html>
